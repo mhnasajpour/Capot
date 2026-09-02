@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- کاپوت — a car with its hood up. The tile is drawn here rather than left
+       to the browser because a favicon has no container to inherit. -->
+  <rect width="64" height="64" rx="16" fill="#E4322B"/>
+  <g transform="translate(11.2 11.2) scale(1.7333)"
+     fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 6.5C8 6.3 12.4 7.7 15.5 10.2"/>
+    <path d="M15.5 10.2h2c.9 0 1.7.5 2.1 1.3l1.1 2.2"/>
+    <path d="M2.9 15.5v-3.2c0-.9.6-1.7 1.5-1.9l4.7-1"/>
+    <path d="M2.9 15.5h1.9M9.4 15.5h5.4M19.4 15.5h1.7"/>
+    <circle cx="7.1" cy="15.5" r="2.3"/>
+    <circle cx="17.1" cy="15.5" r="2.3"/>
+  </g>
+</svg>

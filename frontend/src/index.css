@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* The light palette. Every value here is redefined under `.dark` below, and
+     nothing outside this block hard-codes a colour, so the two themes can never
+     drift apart component by component. Channels are space-separated so
+     Tailwind's `/opacity` modifiers can slot an alpha in. */
+  :root {
+    color-scheme: light;
+
+    --ink-900: 15 23 32;
+    --ink-800: 27 37 48;
+    --ink-700: 43 55 69;
+    --ink-500: 91 104 120;
+    --ink-300: 154 166 180;
+    --ink-100: 229 233 238;
+    --ink-50: 245 247 249;
+
+    --surface: 255 255 255;
+    --scrim: 15 23 32;
+
+    --deal: 18 133 95;
+    --deal-soft: 230 245 239;
+    --over: 192 57 43;
+    --over-soft: 253 236 234;
+    --brand: 228 50 43;
+    --brand-dark: 194 40 33;
+    --brand-strong: 194 40 33;
+    --brand-soft: 253 236 235;
+
+    /* The health ramp is applied inline from a score, so it lives in variables
+       rather than in Tailwind's palette. */
+    --health-excellent: #12855f;
+    --health-good: #3f9d54;
+    --health-fair: #c98a12;
+    --health-poor: #d1701c;
+    --health-bad: #c0392b;
+
+    --shadow-card: 0 1px 2px rgba(15, 23, 32, 0.06), 0 8px 24px rgba(15, 23, 32, 0.06);
+  }
+
+  /* The dark palette. The ink scale inverts — 900 stays the strongest text, 50
+     stays the page — while the accents get lighter and less saturated, because
+     the same red and green that read as confident on white glare on black. */
+  .dark {
+    color-scheme: dark;
+
+    --ink-900: 233 238 244;
+    --ink-800: 207 216 226;
+    --ink-700: 179 191 205;
+    --ink-500: 133 147 163;
+    --ink-300: 100 113 127;
+    --ink-100: 43 53 66;
+    --ink-50: 16 21 27;
+
+    --surface: 23 29 37;
+    --scrim: 0 0 0;
+
+    --deal: 53 196 141;
+    --deal-soft: 16 53 42;
+    --over: 244 124 112;
+    --over-soft: 59 29 26;
+    --brand: 255 81 71;
+    --brand-dark: 255 157 150;
+    --brand-strong: 217 42 34;
+    --brand-soft: 58 28 26;
+
+    --health-excellent: #34c48d;
+    --health-good: #6dc47e;
+    --health-fair: #e0ab3d;
+    --health-poor: #ec8f47;
+    --health-bad: #f47c70;
+
+    /* Shadows read as depth on white and as nothing on near-black, so the dark
+       theme leans on a heavier, blacker one plus the surface/page step. */
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  html {
+    font-feature-settings: "ss01";
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+  }
+
+  /* Persian text needs a little more line height to stay readable. */
+  [dir="rtl"] {
+    line-height: 1.8;
+  }
+}
+
+@layer components {
+  /* One container for header, content and footer. It stays readable on a
+     laptop but keeps widening on a large monitor instead of leaving half the
+     screen empty. */
+  .shell {
+    @apply mx-auto w-full max-w-[1440px] px-5 xl:px-8 2xl:max-w-[1760px];
+  }
+
+  .card {
+    @apply bg-surface rounded-2xl shadow-card border border-ink-100;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium
+           bg-ink-50 text-ink-700 border border-ink-100;
+  }
+
+  /* The banner's ground. A warm brand glow at the top fading into the page
+     colour, so the fold reads as one band without a hard edge to cut the page
+     in half. Both layers are built from the theme variables, which is what
+     keeps it from turning into a grey smear once the dark palette loads. */
+  .hero-band {
+    @apply relative overflow-hidden;
+    background:
+      radial-gradient(58rem 26rem at 50% -8rem, rgb(var(--brand) / 0.13), transparent 68%),
+      linear-gradient(to bottom, rgb(var(--surface)), rgb(var(--ink-50)) 82%);
+  }
+
+  /* Keyboard-first visitors get to skip straight to the one control that
+     matters, rather than tabbing the header to reach it. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:z-50
+           focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm
+           focus:font-semibold focus:text-white;
+  }
+}
+
+/* The scoring bar animates on mount so a result list feels alive rather than
+   dumped onto the page. */
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-grow {
+  transform-origin: left;
+  animation: grow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+[dir="rtl"] .animate-grow {
+  transform-origin: right;
+}

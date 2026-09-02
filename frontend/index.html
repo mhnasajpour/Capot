@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="کاپوت — قیمت واقعی، سلامت خودرو و تناسب با نیاز در بازار خودروی کارکردهٔ ایران. حتی آگهی‌های «توافقی» قیمت می‌گیرند."
+    />
+    <meta name="theme-color" content="#f5f7f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#10151b" media="(prefers-color-scheme: dark)" />
+    <title>کاپوت | Capot</title>
+
+    <!-- The share card. Built from the product's own tokens by brand/build.py,
+         so a link preview looks like the page it opens. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="کاپوت" />
+    <meta property="og:title" content="کاپوت — قیمت نگذاشته؟ ما گذاشتیم." />
+    <meta
+      property="og:description"
+      content="۲٬۶۲۱ آگهی «توافقی» هیچ‌جا قابل جستجو، فیلتر یا مقایسه نیستند. کاپوت قیمت بازارشان را برآورد می‌کند."
+    />
+    <meta property="og:image" content="/brand/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Paint the right theme on the very first frame. React only gets to this
+      // once the bundle has loaded, and a white flash before a dark page is
+      // worse than anything the wait costs. Key matches src/theme.ts.
+      (function () {
+        try {
+          var stored = localStorage.getItem("capot-theme");
+          var dark =
+            stored === "dark" ||
+            (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {
+          /* Storage blocked: the app settles it after mount. */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

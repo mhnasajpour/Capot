@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/.venv/
+backend/.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Data artefacts.
+# The raw crawl and the trained model are regenerable and large, so they stay
+# out of git. data/llm_cache/ is deliberately NOT ignored — it is committed so
+# the app runs offline, which is what keeps the demo safe.
+backend/data/*.jsonl
+backend/data/*.db
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/data/*.pkl
+# Derived search artefacts: the sentence embeddings and the cached LSA
+# decomposition. Both are rebuilt from the corpus on demand.
+backend/data/*.npy
+backend/data/*.npz
+
+# OS
+.DS_Store

@@ -1,0 +1,5165 @@
+{
+ "version": 2,
+ "n_rows": 22820,
+ "brands": {
+  "کی ام سی": "kmc",
+  "kmc": "kmc",
+  "پژو": "peugeot",
+  "peugeot": "peugeot",
+  "شاهین": "shahin",
+  "shahin": "shahin",
+  "زامیاد": "zamyad",
+  "zamyad": "zamyad",
+  "دیگنیتی": "dignity",
+  "dignity": "dignity",
+  "اس دبلیو ام": "swm",
+  "swm": "swm",
+  "فولکس": "volkswagen",
+  "volkswagen": "volkswagen",
+  "زوتی": "zotye",
+  "zotye": "zotye",
+  "لوکانو": "lucano",
+  "lucano": "lucano",
+  "ب ام و": "bmw",
+  "bmw": "bmw",
+  "ریسپکت": "respect",
+  "respect": "respect",
+  "نیسان": "nissan",
+  "nissan": "nissan",
+  "کارا": "cara",
+  "cara": "cara",
+  "تویوتا": "toyota",
+  "toyota": "toyota",
+  "ام جی": "mg",
+  "mg": "mg",
+  "کوییک": "quick",
+  "quick": "quick",
+  "فوتون": "foton",
+  "foton": "foton",
+  "بنز": "benz",
+  "mercedesbenz": "mercedesbenz",
+  "ام وی ام": "mvm",
+  "mvm": "mvm",
+  "هیوندای": "hyundai",
+  "hyundai": "hyundai",
+  "ولوو": "volvo",
+  "volvo": "volvo",
+  "دنا": "dena",
+  "dena": "dena",
+  "سوئیست": "soueast",
+  "soueast": "soueast",
+  "رنو": "renault",
+  "renault": "renault",
+  "سیتروئن": "citroen",
+  "citroen": "citroen",
+  "کیا": "kia",
+  "kia": "kia",
+  "دانگ فنگ": "dongfeng",
+  "dongfeng": "dongfeng",
+  "مکث موتور": "maxmotor",
+  "maxmotor": "maxmotor",
+  "تارا": "tara",
+  "tara": "tara",
+  "مزدا": "mazda",
+  "mazda": "mazda",
+  "فونیکس": "fownix",
+  "fownix": "fownix",
+  "چانگان": "changan",
+  "changan": "changan",
+  "هاوال": "haval",
+  "haval": "haval",
+  "پراید": "pride",
+  "pride": "pride",
+  "اکستریم": "xtrim",
+  "xtrim": "xtrim",
+  "ائودی": "audi",
+  "audi": "audi",
+  "هایما": "haima",
+  "haima": "haima",
+  "الفارومئو": "alfaromeo",
+  "alfaromeo": "alfaromeo",
+  "سوزوکی": "suzuki",
+  "suzuki": "suzuki",
+  "بستیون": "bestune",
+  "bestune": "bestune",
+  "تانک": "tank",
+  "tank": "tank",
+  "کاپرا": "capra",
+  "capra": "capra",
+  "چری": "chery",
+  "chery": "chery",
+  "فیدلیتی": "fidelity",
+  "fidelity": "fidelity",
+  "پورشه": "porsche",
+  "porsche": "porsche",
+  "سانگ یانگ kgm": "ssangyong",
+  "ssangyong": "ssangyong",
+  "امیکو": "amico",
+  "amico": "amico",
+  "لیفان": "lifan",
+  "lifan": "lifan",
+  "هوندا": "honda",
+  "honda": "honda",
+  "لاماری": "lamari",
+  "lamari": "lamari",
+  "جیلی": "geely",
+  "geely": "geely",
+  "لکسوس": "lexus",
+  "lexus": "lexus",
+  "برلیانس": "brilliance",
+  "brilliance": "brilliance",
+  "اطلس": "atlas",
+  "atlas": "atlas",
+  "دوو": "daewoo",
+  "daewoo": "daewoo",
+  "تیبا": "tiba",
+  "tiba": "tiba",
+  "گاز": "gaz",
+  "gaz": "gaz",
+  "فردا": "farda",
+  "farda": "farda",
+  "فیات": "fiat",
+  "fiat": "fiat",
+  "اریسان": "arisun",
+  "arisun": "arisun",
+  "جک": "jac",
+  "jac": "jac",
+  "اینرودز": "inroads",
+  "inroads": "inroads",
+  "میتسوبیشی": "mitsubishi",
+  "mitsubishi": "mitsubishi",
+  "بورگوارد": "borgward",
+  "borgward": "borgward",
+  "سمند": "samand",
+  "samand": "samand",
+  "بسترن": "besturn",
+  "besturn": "besturn",
+  "لندرور": "landrover",
+  "landrover": "landrover",
+  "پیکان": "peykan",
+  "peykan": "peykan",
+  "روئوه": "roewe",
+  "roewe": "roewe",
+  "ساینا": "saina",
+  "saina": "saina",
+  "دوج": "dodge",
+  "dodge": "dodge",
+  "بی وای دی": "byd",
+  "byd": "byd",
+  "هونگچی": "hongqi",
+  "hongqi": "hongqi",
+  "تیگارد": "tigardmotor",
+  "tigardmotor": "tigardmotor",
+  "اپل": "opel",
+  "opel": "opel",
+  "پاژن": "pazhan",
+  "pazhan": "pazhan",
+  "گریت وال": "greatwall",
+  "greatwall": "greatwall",
+  "وویا": "voyah",
+  "voyah": "voyah",
+  "جتا": "jetta",
+  "jetta": "jetta",
+  "ونوسیا": "venucia",
+  "venucia": "venucia",
+  "مازراتی": "maserati",
+  "maserati": "maserati",
+  "جی ای سی": "gacgonow",
+  "gacgonow": "gacgonow",
+  "سیناد": "sinad",
+  "sinad": "sinad",
+  "رانا": "rana",
+  "rana": "rana",
+  "بی ام و": "bmw",
+  "سایپا": "saipa",
+  "saipa": "saipa",
+  "سانگ یانگ": "ssangyong",
+  "benz": "benz",
+  "بی ای سی": "bac",
+  "bac": "bac",
+  "ایران خودرو": "ikco",
+  "ikco": "ikco",
+  "great wall": "great-wall",
+  "راین": "rayen",
+  "rayen": "rayen",
+  "اونترا": "aventra",
+  "aventra": "aventra",
+  "runna": "runna",
+  "mercedes benz": "mercedes-benz",
+  "tigard": "tigard",
+  "فولکس واگن": "volkswagen",
+  "سهند": "sahand",
+  "sahand": "sahand",
+  "ری را": "reera",
+  "reera": "reera",
+  "مرسدس": "benz",
+  "مرسدس بنز": "benz",
+  "هیوندا": "hyundai"
+ },
+ "models": {
+  "x5": [
+   [
+    "bmw",
+    "x5"
+   ],
+   [
+    "kmc",
+    "x5"
+   ]
+  ],
+  "207": [
+   [
+    "peugeot",
+    "207"
+   ]
+  ],
+  "g دنده ای": [
+   [
+    "shahin",
+    "g"
+   ]
+  ],
+  "pickup": [
+   [
+    "mazda",
+    "pickup"
+   ],
+   [
+    "nissan",
+    "pickup"
+   ],
+   [
+    "peykan",
+    "pickup"
+   ],
+   [
+    "pride",
+    "pickup"
+   ],
+   [
+    "zamyad",
+    "pickup"
+   ]
+  ],
+  "وانت نیسان": [
+   [
+    "zamyad",
+    "pickup"
+   ]
+  ],
+  "prestige": [
+   [
+    "dignity",
+    "prestige"
+   ],
+   [
+    "fidelity",
+    "prestige"
+   ]
+  ],
+  "پرستیژ": [
+   [
+    "dignity",
+    "prestige"
+   ],
+   [
+    "fidelity",
+    "prestige"
+   ]
+  ],
+  "g01": [
+   [
+    "swm",
+    "g01"
+   ]
+  ],
+  "tiguan": [
+   [
+    "volkswagen",
+    "tiguan"
+   ]
+  ],
+  "تیگوان": [
+   [
+    "volkswagen",
+    "tiguan"
+   ]
+  ],
+  "ario": [
+   [
+    "zotye",
+    "ario"
+   ]
+  ],
+  "اریو": [
+   [
+    "zotye",
+    "ario"
+   ]
+  ],
+  "l7": [
+   [
+    "lucano",
+    "l7"
+   ]
+  ],
+  "5seriessedan": [
+   [
+    "bmw",
+    "5seriessedan"
+   ]
+  ],
+  "سری 5 سدان": [
+   [
+    "bmw",
+    "5seriessedan"
+   ]
+  ],
+  "prime": [
+   [
+    "dignity",
+    "prime"
+   ],
+   [
+    "fidelity",
+    "prime"
+   ],
+   [
+    "respect",
+    "prime"
+   ]
+  ],
+  "پرایم": [
+   [
+    "dignity",
+    "prime"
+   ],
+   [
+    "fidelity",
+    "prime"
+   ],
+   [
+    "respect",
+    "prime"
+   ]
+  ],
+  "terra": [
+   [
+    "nissan",
+    "terra"
+   ]
+  ],
+  "ترا": [
+   [
+    "nissan",
+    "terra"
+   ]
+  ],
+  "2door": [
+   [
+    "cara",
+    "2door"
+   ]
+  ],
+  "تک کابین": [
+   [
+    "cara",
+    "2door"
+   ]
+  ],
+  "hilux4door": [
+   [
+    "toyota",
+    "hilux4door"
+   ]
+  ],
+  "هایلوکس دو کابین": [
+   [
+    "toyota",
+    "hilux4door"
+   ]
+  ],
+  "corolla": [
+   [
+    "toyota",
+    "corolla"
+   ]
+  ],
+  "کرولا": [
+   [
+    "toyota",
+    "corolla"
+   ]
+  ],
+  "aurion": [
+   [
+    "toyota",
+    "aurion"
+   ]
+  ],
+  "اریون": [
+   [
+    "toyota",
+    "aurion"
+   ]
+  ],
+  "t9": [
+   [
+    "kmc",
+    "t9"
+   ]
+  ],
+  "manualr": [
+   [
+    "quick",
+    "manualr"
+   ]
+  ],
+  "دنده ای r": [
+   [
+    "quick",
+    "manualr"
+   ]
+  ],
+  "tunlandg7": [
+   [
+    "foton",
+    "tunlandg7"
+   ]
+  ],
+  "تونلند g7": [
+   [
+    "foton",
+    "tunlandg7"
+   ]
+  ],
+  "eclass": [
+   [
+    "mercedesbenz",
+    "eclass"
+   ]
+  ],
+  "کلاس e": [
+   [
+    "mercedesbenz",
+    "eclass"
+   ]
+  ],
+  "110": [
+   [
+    "mvm",
+    "110"
+   ]
+  ],
+  "tucsonix35": [
+   [
+    "hyundai",
+    "tucsonix35"
+   ]
+  ],
+  "توسان": [
+   [
+    "hyundai",
+    "tucsonix35"
+   ]
+  ],
+  "xc90": [
+   [
+    "volvo",
+    "xc90"
+   ]
+  ],
+  "glb": [
+   [
+    "mercedesbenz",
+    "glb"
+   ]
+  ],
+  "کلاس glb": [
+   [
+    "mercedesbenz",
+    "glb"
+   ]
+  ],
+  "furtuner": [
+   [
+    "toyota",
+    "furtuner"
+   ]
+  ],
+  "فرچونر": [
+   [
+    "toyota",
+    "furtuner"
+   ]
+  ],
+  "plusef7p": [
+   [
+    "dena",
+    "plusef7p"
+   ]
+  ],
+  "پلاس ef7p": [
+   [
+    "dena",
+    "plusef7p"
+   ]
+  ],
+  "i40": [
+   [
+    "hyundai",
+    "i40"
+   ]
+  ],
+  "delica": [
+   [
+    "soueast",
+    "delica"
+   ]
+  ],
+  "ون دلیکا": [
+   [
+    "soueast",
+    "delica"
+   ]
+  ],
+  "pars": [
+   [
+    "peugeot",
+    "pars"
+   ]
+  ],
+  "پارس": [
+   [
+    "peugeot",
+    "pars"
+   ]
+  ],
+  "koleos": [
+   [
+    "renault",
+    "koleos"
+   ]
+  ],
+  "کولیوس": [
+   [
+    "renault",
+    "koleos"
+   ]
+  ],
+  "prado4doors": [
+   [
+    "toyota",
+    "prado4doors"
+   ]
+  ],
+  "پرادو چهار در": [
+   [
+    "toyota",
+    "prado4doors"
+   ]
+  ],
+  "c3ir": [
+   [
+    "citroen",
+    "c3ir"
+   ]
+  ],
+  "c3 مونتاژ": [
+   [
+    "citroen",
+    "c3ir"
+   ]
+  ],
+  "c3": [
+   [
+    "citroen",
+    "c3ir"
+   ]
+  ],
+  "rav4": [
+   [
+    "toyota",
+    "rav4"
+   ]
+  ],
+  "راوفور": [
+   [
+    "toyota",
+    "rav4"
+   ]
+  ],
+  "sorento": [
+   [
+    "kia",
+    "sorento"
+   ]
+  ],
+  "سورنتو": [
+   [
+    "kia",
+    "sorento"
+   ]
+  ],
+  "h30cross": [
+   [
+    "dongfeng",
+    "h30cross"
+   ]
+  ],
+  "h30 کراس": [
+   [
+    "dongfeng",
+    "h30cross"
+   ]
+  ],
+  "kalut": [
+   [
+    "maxmotor",
+    "kalut"
+   ]
+  ],
+  "کلوت": [
+   [
+    "maxmotor",
+    "kalut"
+   ]
+  ],
+  "x22": [
+   [
+    "mvm",
+    "x22"
+   ]
+  ],
+  "plus": [
+   [
+    "dena",
+    "plus"
+   ],
+   [
+    "runna",
+    "plus"
+   ]
+  ],
+  "پلاس ef7": [
+   [
+    "dena",
+    "plus"
+   ]
+  ],
+  "automaticv4": [
+   [
+    "tara",
+    "automaticv4"
+   ]
+  ],
+  "اتوماتیک v4": [
+   [
+    "tara",
+    "automaticv4"
+   ]
+  ],
+  "v4": [
+   [
+    "tara",
+    "automaticv4"
+   ]
+  ],
+  "3ir": [
+   [
+    "mazda",
+    "3ir"
+   ]
+  ],
+  "3 قدیم": [
+   [
+    "mazda",
+    "3ir"
+   ]
+  ],
+  "captur": [
+   [
+    "renault",
+    "captur"
+   ]
+  ],
+  "کپچر": [
+   [
+    "renault",
+    "captur"
+   ]
+  ],
+  "azera": [
+   [
+    "hyundai",
+    "azera"
+   ]
+  ],
+  "ازرا گرنجور": [
+   [
+    "hyundai",
+    "azera"
+   ]
+  ],
+  "ceratoir": [
+   [
+    "kia",
+    "ceratoir"
+   ]
+  ],
+  "سراتو مونتاژ": [
+   [
+    "kia",
+    "ceratoir"
+   ]
+  ],
+  "سراتو": [
+   [
+    "kia",
+    "cerato"
+   ],
+   [
+    "kia",
+    "ceratoir"
+   ]
+  ],
+  "cerato": [
+   [
+    "kia",
+    "cerato"
+   ],
+   [
+    "kia",
+    "cerato-ir"
+   ],
+   [
+    "kia",
+    "ceratoir"
+   ]
+  ],
+  "x33cross": [
+   [
+    "mvm",
+    "x33cross"
+   ]
+  ],
+  "x33 کراس": [
+   [
+    "mvm",
+    "x33cross"
+   ]
+  ],
+  "tiggo8promax": [
+   [
+    "fownix",
+    "tiggo8promax"
+   ]
+  ],
+  "تیگو 8 پرو مکس f8": [
+   [
+    "fownix",
+    "tiggo8promax"
+   ]
+  ],
+  "teanaim": [
+   [
+    "nissan",
+    "teanaim"
+   ]
+  ],
+  "تیانا": [
+   [
+    "nissan",
+    "teanaim"
+   ],
+   [
+    "nissan",
+    "teanair"
+   ]
+  ],
+  "tondar90": [
+   [
+    "renault",
+    "tondar90"
+   ]
+  ],
+  "تندر 90": [
+   [
+    "renault",
+    "tondar90"
+   ],
+   [
+    "renault",
+    "tondar90station"
+   ]
+  ],
+  "3sedan": [
+   [
+    "mazda",
+    "3sedan"
+   ]
+  ],
+  "3 نیو صندوق دار": [
+   [
+    "mazda",
+    "3sedan"
+   ]
+  ],
+  "cs35ir": [
+   [
+    "changan",
+    "cs35ir"
+   ]
+  ],
+  "cs 35 مونتاژ": [
+   [
+    "changan",
+    "cs35ir"
+   ]
+  ],
+  "cs 35": [
+   [
+    "changan",
+    "cs35ir"
+   ]
+  ],
+  "cs35": [
+   [
+    "changan",
+    "cs35"
+   ],
+   [
+    "changan",
+    "cs35ir"
+   ]
+  ],
+  "530": [
+   [
+    "mvm",
+    "530"
+   ]
+  ],
+  "h6hev": [
+   [
+    "haval",
+    "h6hev"
+   ]
+  ],
+  "h6 hev": [
+   [
+    "haval",
+    "h6hev"
+   ]
+  ],
+  "hatchback": [
+   [
+    "pride",
+    "hatchback"
+   ],
+   [
+    "tiba",
+    "hatchback"
+   ]
+  ],
+  "هاچ بک": [
+   [
+    "pride",
+    "hatchback"
+   ],
+   [
+    "tiba",
+    "hatchback"
+   ]
+  ],
+  "vx": [
+   [
+    "xtrim",
+    "vx"
+   ]
+  ],
+  "vx qx": [
+   [
+    "xtrim",
+    "vx"
+   ]
+  ],
+  "sclass": [
+   [
+    "mercedesbenz",
+    "sclass"
+   ]
+  ],
+  "کلاس s": [
+   [
+    "mercedesbenz",
+    "sclass"
+   ]
+  ],
+  "q5": [
+   [
+    "audi",
+    "q5"
+   ]
+  ],
+  "131": [
+   [
+    "pride",
+    "131"
+   ]
+  ],
+  "pickupir2cab": [
+   [
+    "nissan",
+    "pickupir2cab"
+   ]
+  ],
+  "پیکاپ دو کابین": [
+   [
+    "nissan",
+    "pickupir2cab"
+   ]
+  ],
+  "xantia": [
+   [
+    "citroen",
+    "xantia"
+   ]
+  ],
+  "زانتیا": [
+   [
+    "citroen",
+    "xantia"
+   ]
+  ],
+  "s7": [
+   [
+    "haima",
+    "s7"
+   ]
+  ],
+  "206ir": [
+   [
+    "peugeot",
+    "206ir"
+   ]
+  ],
+  "206": [
+   [
+    "peugeot",
+    "206"
+   ],
+   [
+    "peugeot",
+    "206ir"
+   ]
+  ],
+  "latitude": [
+   [
+    "renault",
+    "latitude"
+   ]
+  ],
+  "لتیتود": [
+   [
+    "renault",
+    "latitude"
+   ]
+  ],
+  "giulietta": [
+   [
+    "alfaromeo",
+    "giulietta"
+   ]
+  ],
+  "جولیتا": [
+   [
+    "alfaromeo",
+    "giulietta"
+   ]
+  ],
+  "grandvitarair": [
+   [
+    "suzuki",
+    "grandvitarair"
+   ]
+  ],
+  "گراند ویتارا مونتاژ": [
+   [
+    "suzuki",
+    "grandvitarair"
+   ]
+  ],
+  "گراند ویتارا": [
+   [
+    "suzuki",
+    "grandvitara"
+   ],
+   [
+    "suzuki",
+    "grandvitarair"
+   ]
+  ],
+  "grandvitara": [
+   [
+    "suzuki",
+    "grandvitara"
+   ],
+   [
+    "suzuki",
+    "grandvitarair"
+   ]
+  ],
+  "315hatchback": [
+   [
+    "mvm",
+    "315hatchback"
+   ]
+  ],
+  "315هاچ بک": [
+   [
+    "mvm",
+    "315hatchback"
+   ]
+  ],
+  "315": [
+   [
+    "mvm",
+    "315hatchback"
+   ],
+   [
+    "mvm",
+    "315sedan"
+   ]
+  ],
+  "405": [
+   [
+    "peugeot",
+    "405"
+   ]
+  ],
+  "prius": [
+   [
+    "toyota",
+    "prius"
+   ]
+  ],
+  "پریوس": [
+   [
+    "toyota",
+    "prius"
+   ]
+  ],
+  "t77": [
+   [
+    "bestune",
+    "t77"
+   ]
+  ],
+  "juke": [
+   [
+    "nissan",
+    "juke"
+   ]
+  ],
+  "جوک": [
+   [
+    "nissan",
+    "juke"
+   ]
+  ],
+  "meganir": [
+   [
+    "renault",
+    "meganir"
+   ]
+  ],
+  "مگان مونتاژ": [
+   [
+    "renault",
+    "meganir"
+   ]
+  ],
+  "مگان": [
+   [
+    "renault",
+    "megan"
+   ],
+   [
+    "renault",
+    "meganir"
+   ]
+  ],
+  "megan": [
+   [
+    "renault",
+    "megan"
+   ],
+   [
+    "renault",
+    "megan-ir"
+   ],
+   [
+    "renault",
+    "meganir"
+   ]
+  ],
+  "500hevir": [
+   [
+    "tank",
+    "500hevir"
+   ]
+  ],
+  "500hev مونتاژی": [
+   [
+    "tank",
+    "500hevir"
+   ]
+  ],
+  "500hev ی": [
+   [
+    "tank",
+    "500hevir"
+   ]
+  ],
+  "500hev": [
+   [
+    "tank",
+    "500hev"
+   ],
+   [
+    "tank",
+    "500hevir"
+   ]
+  ],
+  "4door": [
+   [
+    "capra",
+    "4door"
+   ],
+   [
+    "cara",
+    "4door"
+   ]
+  ],
+  "دو کابین": [
+   [
+    "capra",
+    "4door"
+   ],
+   [
+    "cara",
+    "4door"
+   ]
+  ],
+  "arrizo5tsport": [
+   [
+    "chery",
+    "arrizo5tsport"
+   ]
+  ],
+  "اریزو 5t اسپرت fl": [
+   [
+    "chery",
+    "arrizo5tsport"
+   ]
+  ],
+  "santafeix45": [
+   [
+    "hyundai",
+    "santafeix45"
+   ]
+  ],
+  "سانتافه": [
+   [
+    "hyundai",
+    "santafeix45"
+   ]
+  ],
+  "sportage": [
+   [
+    "kia",
+    "sportage"
+   ]
+  ],
+  "اسپورتیج": [
+   [
+    "kia",
+    "sportage"
+   ]
+  ],
+  "maximair": [
+   [
+    "nissan",
+    "maximair"
+   ]
+  ],
+  "ماکسیما": [
+   [
+    "nissan",
+    "maximaim"
+   ],
+   [
+    "nissan",
+    "maximair"
+   ]
+  ],
+  "maxima": [
+   [
+    "nissan",
+    "maxima-ir"
+   ],
+   [
+    "nissan",
+    "maximair"
+   ]
+  ],
+  "cayenne": [
+   [
+    "porsche",
+    "cayenne"
+   ]
+  ],
+  "کاین": [
+   [
+    "porsche",
+    "cayenne"
+   ]
+  ],
+  "tivoli": [
+   [
+    "ssangyong",
+    "tivoli"
+   ],
+   [
+    "ssangyong",
+    "tivoliir"
+   ]
+  ],
+  "تیوولی": [
+   [
+    "ssangyong",
+    "tivoli"
+   ],
+   [
+    "ssangyong",
+    "tivoliir"
+   ]
+  ],
+  "manuals": [
+   [
+    "quick",
+    "manuals"
+   ],
+   [
+    "saina",
+    "manuals"
+   ]
+  ],
+  "دنده ای s": [
+   [
+    "quick",
+    "manuals"
+   ]
+  ],
+  "206sd": [
+   [
+    "peugeot",
+    "206sd"
+   ]
+  ],
+  "206 sd": [
+   [
+    "peugeot",
+    "206 sd"
+   ],
+   [
+    "peugeot",
+    "206sd"
+   ]
+  ],
+  "sr3": [
+   [
+    "kmc",
+    "sr3"
+   ]
+  ],
+  "manual": [
+   [
+    "atlas",
+    "manual"
+   ],
+   [
+    "quick",
+    "manual"
+   ],
+   [
+    "saina",
+    "manual"
+   ],
+   [
+    "tara",
+    "manual"
+   ]
+  ],
+  "دنده ای": [
+   [
+    "atlas",
+    "g"
+   ],
+   [
+    "quick",
+    "manual"
+   ]
+  ],
+  "asna4door": [
+   [
+    "amico",
+    "asna4door"
+   ]
+  ],
+  "دو کابین اسنا": [
+   [
+    "amico",
+    "asna4door"
+   ]
+  ],
+  "x70": [
+   [
+    "lifan",
+    "x70"
+   ]
+  ],
+  "151": [
+   [
+    "pride",
+    "151"
+   ]
+  ],
+  "crvehev": [
+   [
+    "honda",
+    "crvehev"
+   ]
+  ],
+  "cr v ehev": [
+   [
+    "honda",
+    "crvehev"
+   ]
+  ],
+  "elantra": [
+   [
+    "hyundai",
+    "elantra"
+   ],
+   [
+    "hyundai",
+    "elantrair"
+   ]
+  ],
+  "النترا": [
+   [
+    "hyundai",
+    "elantra"
+   ],
+   [
+    "hyundai",
+    "elantrair"
+   ]
+  ],
+  "camry": [
+   [
+    "toyota",
+    "camry"
+   ]
+  ],
+  "کمری": [
+   [
+    "toyota",
+    "camry"
+   ]
+  ],
+  "eama": [
+   [
+    "lamari",
+    "eama"
+   ]
+  ],
+  "ایما": [
+   [
+    "lamari",
+    "eama"
+   ]
+  ],
+  "azkarrahybrid": [
+   [
+    "geely",
+    "azkarrahybrid"
+   ]
+  ],
+  "ازکارا هیبرید": [
+   [
+    "geely",
+    "azkarrahybrid"
+   ]
+  ],
+  "rx": [
+   [
+    "lexus",
+    "rx"
+   ]
+  ],
+  "sonatahybrid": [
+   [
+    "hyundai",
+    "sonatahybrid"
+   ]
+  ],
+  "سوناتا هیبرید": [
+   [
+    "hyundai",
+    "sonatahybrid"
+   ]
+  ],
+  "tiggo7pro": [
+   [
+    "fownix",
+    "tiggo7pro"
+   ]
+  ],
+  "تیگو 7 پرو": [
+   [
+    "fownix",
+    "tiggo7pro"
+   ]
+  ],
+  "tiggo5": [
+   [
+    "chery",
+    "tiggo5"
+   ]
+  ],
+  "تیگو 5": [
+   [
+    "chery",
+    "tiggo5"
+   ]
+  ],
+  "i20ir": [
+   [
+    "hyundai",
+    "i20ir"
+   ]
+  ],
+  "i20 مونتاژ": [
+   [
+    "hyundai",
+    "i20ir"
+   ]
+  ],
+  "i20": [
+   [
+    "hyundai",
+    "i20"
+   ],
+   [
+    "hyundai",
+    "i20-ir"
+   ],
+   [
+    "hyundai",
+    "i20ir"
+   ]
+  ],
+  "l8": [
+   [
+    "lucano",
+    "l8"
+   ]
+  ],
+  "mohave": [
+   [
+    "kia",
+    "mohave"
+   ]
+  ],
+  "موهاوی": [
+   [
+    "kia",
+    "mohave"
+   ]
+  ],
+  "sanderostepway": [
+   [
+    "renault",
+    "sanderostepway"
+   ]
+  ],
+  "ساندرو استپ وی": [
+   [
+    "renault",
+    "sanderostepway"
+   ]
+  ],
+  "arrizo6pro": [
+   [
+    "fownix",
+    "arrizo6pro"
+   ]
+  ],
+  "اریزو 6 پرو": [
+   [
+    "fownix",
+    "arrizo6pro"
+   ]
+  ],
+  "nxhybrid": [
+   [
+    "lexus",
+    "nxhybrid"
+   ]
+  ],
+  "nx هیبرید": [
+   [
+    "lexus",
+    "nxhybrid"
+   ]
+  ],
+  "x22pro": [
+   [
+    "mvm",
+    "x22pro"
+   ]
+  ],
+  "x22 pro": [
+   [
+    "mvm",
+    "x22 pro"
+   ],
+   [
+    "mvm",
+    "x22pro"
+   ]
+  ],
+  "patrol4doorir": [
+   [
+    "nissan",
+    "patrol4doorir"
+   ]
+  ],
+  "پاترول چهار در": [
+   [
+    "nissan",
+    "patrol4doorir"
+   ]
+  ],
+  "patrol4door": [
+   [
+    "nissan",
+    "patrol4doorir"
+   ]
+  ],
+  "automatic": [
+   [
+    "quick",
+    "automatic"
+   ],
+   [
+    "shahin",
+    "automatic"
+   ],
+   [
+    "tara",
+    "automatic"
+   ]
+  ],
+  "اتوماتیک v2": [
+   [
+    "tara",
+    "automatic"
+   ]
+  ],
+  "v2": [
+   [
+    "tara",
+    "automatic"
+   ]
+  ],
+  "x55pro": [
+   [
+    "mvm",
+    "x55pro"
+   ]
+  ],
+  "x55 pro": [
+   [
+    "mvm",
+    "x55 pro"
+   ],
+   [
+    "mvm",
+    "x55pro"
+   ]
+  ],
+  "2008": [
+   [
+    "peugeot",
+    "2008"
+   ]
+  ],
+  "camryhybrid": [
+   [
+    "toyota",
+    "camryhybrid"
+   ]
+  ],
+  "کمری هیبرید": [
+   [
+    "toyota",
+    "camryhybrid"
+   ]
+  ],
+  "talisman": [
+   [
+    "renault",
+    "talisman"
+   ]
+  ],
+  "تالیسمان": [
+   [
+    "renault",
+    "talisman"
+   ]
+  ],
+  "macan": [
+   [
+    "porsche",
+    "macan"
+   ]
+  ],
+  "ماکان": [
+   [
+    "porsche",
+    "macan"
+   ]
+  ],
+  "van": [
+   [
+    "toyota",
+    "van"
+   ]
+  ],
+  "ون": [
+   [
+    "toyota",
+    "van"
+   ]
+  ],
+  "گراند ویتارا وارداتی": [
+   [
+    "suzuki",
+    "grandvitara"
+   ]
+  ],
+  "rioir": [
+   [
+    "kia",
+    "rioir"
+   ]
+  ],
+  "ریو مونتاژ": [
+   [
+    "kia",
+    "rioir"
+   ]
+  ],
+  "ریو": [
+   [
+    "kia",
+    "riohatchback"
+   ],
+   [
+    "kia",
+    "rioir"
+   ]
+  ],
+  "rio": [
+   [
+    "kia",
+    "rio-ir"
+   ],
+   [
+    "kia",
+    "rioir"
+   ]
+  ],
+  "nx": [
+   [
+    "lexus",
+    "nx"
+   ]
+  ],
+  "gol": [
+   [
+    "volkswagen",
+    "gol"
+   ]
+  ],
+  "گل": [
+   [
+    "volkswagen",
+    "gol"
+   ]
+  ],
+  "fx": [
+   [
+    "fownix",
+    "fx"
+   ]
+  ],
+  "pickup2doorir": [
+   [
+    "mazda",
+    "pickup2doorir"
+   ]
+  ],
+  "وانت تک کابین": [
+   [
+    "mazda",
+    "pickup2doorir"
+   ]
+  ],
+  "pickup2door": [
+   [
+    "mazda",
+    "pickup2doorir"
+   ]
+  ],
+  "h330": [
+   [
+    "brilliance",
+    "h330"
+   ]
+  ],
+  "323": [
+   [
+    "mazda",
+    "323"
+   ]
+  ],
+  "cielo": [
+   [
+    "daewoo",
+    "cielo"
+   ]
+  ],
+  "سیلو": [
+   [
+    "daewoo",
+    "cielo"
+   ]
+  ],
+  "symbol": [
+   [
+    "renault",
+    "symbol"
+   ]
+  ],
+  "سیمبل": [
+   [
+    "renault",
+    "symbol"
+   ]
+  ],
+  "x33s": [
+   [
+    "mvm",
+    "x33s"
+   ]
+  ],
+  "x33 s": [
+   [
+    "mvm",
+    "x33s"
+   ]
+  ],
+  "echo": [
+   [
+    "lamari",
+    "echo"
+   ]
+  ],
+  "اکو": [
+   [
+    "lamari",
+    "echo"
+   ]
+  ],
+  "id4crozz": [
+   [
+    "volkswagen",
+    "id4crozz"
+   ]
+  ],
+  "id 4 crozz": [
+   [
+    "volkswagen",
+    "id4crozz"
+   ]
+  ],
+  "gxr": [
+   [
+    "quick",
+    "gxr"
+   ]
+  ],
+  "seltos": [
+   [
+    "kia",
+    "seltos"
+   ]
+  ],
+  "سلتوس": [
+   [
+    "kia",
+    "seltos"
+   ]
+  ],
+  "landcruiser4door": [
+   [
+    "toyota",
+    "landcruiser4door"
+   ]
+  ],
+  "لندکروز چهار در": [
+   [
+    "toyota",
+    "landcruiser4door"
+   ]
+  ],
+  "x3": [
+   [
+    "bmw",
+    "x3"
+   ]
+  ],
+  "gautomatic": [
+   [
+    "shahin",
+    "gautomatic"
+   ]
+  ],
+  "اتوماتیک cvt": [
+   [
+    "shahin",
+    "gautomatic"
+   ]
+  ],
+  "cvt": [
+   [
+    "shahin",
+    "gautomatic"
+   ]
+  ],
+  "sonata": [
+   [
+    "hyundai",
+    "sonata"
+   ]
+  ],
+  "سوناتا": [
+   [
+    "hyundai",
+    "sonata"
+   ]
+  ],
+  "x60": [
+   [
+    "lifan",
+    "x60"
+   ]
+  ],
+  "111": [
+   [
+    "pride",
+    "111"
+   ]
+  ],
+  "kyron": [
+   [
+    "ssangyong",
+    "kyron"
+   ]
+  ],
+  "کایرون": [
+   [
+    "ssangyong",
+    "kyron"
+   ]
+  ],
+  "atfullplus": [
+   [
+    "quick",
+    "atfullplus"
+   ]
+  ],
+  "اتوماتیک پلاس": [
+   [
+    "quick",
+    "atfullplus"
+   ]
+  ],
+  "پلاس": [
+   [
+    "dena",
+    "plus"
+   ],
+   [
+    "quick",
+    "atfullplus"
+   ],
+   [
+    "runna",
+    "plus"
+   ]
+  ],
+  "ghazal": [
+   [
+    "gaz",
+    "ghazal"
+   ]
+  ],
+  "ون غزال ایران خودرو": [
+   [
+    "gaz",
+    "ghazal"
+   ]
+  ],
+  "x4": [
+   [
+    "bmw",
+    "x4"
+   ]
+  ],
+  "4ev": [
+   [
+    "mg",
+    "4ev"
+   ]
+  ],
+  "sx5": [
+   [
+    "farda",
+    "sx5"
+   ]
+  ],
+  "500": [
+   [
+    "fiat",
+    "500"
+   ]
+  ],
+  "arisan": [
+   [
+    "arisun",
+    "arisan"
+   ]
+  ],
+  "دوگانه سوز": [
+   [
+    "arisun",
+    "arisan"
+   ]
+  ],
+  "j4": [
+   [
+    "jac",
+    "j4"
+   ]
+  ],
+  "جی 4": [
+   [
+    "jac",
+    "j4"
+   ]
+  ],
+  "cadenza": [
+   [
+    "kia",
+    "cadenza"
+   ]
+  ],
+  "کادنزا": [
+   [
+    "kia",
+    "cadenza"
+   ]
+  ],
+  "c35": [
+   [
+    "inroads",
+    "c35"
+   ]
+  ],
+  "prado2doors": [
+   [
+    "toyota",
+    "prado2doors"
+   ]
+  ],
+  "پرادو دو در": [
+   [
+    "toyota",
+    "prado2doors"
+   ]
+  ],
+  "tiggo7": [
+   [
+    "chery",
+    "tiggo7"
+   ]
+  ],
+  "تیگو 7": [
+   [
+    "chery",
+    "tiggo7"
+   ]
+  ],
+  "pajero4door": [
+   [
+    "mitsubishi",
+    "pajero4door"
+   ]
+  ],
+  "پاجرو چهار در": [
+   [
+    "mitsubishi",
+    "pajero4door"
+   ]
+  ],
+  "bx7": [
+   [
+    "borgward",
+    "bx7"
+   ]
+  ],
+  "accentir": [
+   [
+    "hyundai",
+    "accentir"
+   ]
+  ],
+  "اکسنت مونتاژ": [
+   [
+    "hyundai",
+    "accentir"
+   ]
+  ],
+  "اکسنت": [
+   [
+    "hyundai",
+    "accent"
+   ],
+   [
+    "hyundai",
+    "accentir"
+   ]
+  ],
+  "accent": [
+   [
+    "hyundai",
+    "accent"
+   ],
+   [
+    "hyundai",
+    "accent-ir"
+   ],
+   [
+    "hyundai",
+    "accentir"
+   ]
+  ],
+  "optima": [
+   [
+    "kia",
+    "optima"
+   ]
+  ],
+  "اپتیما": [
+   [
+    "kia",
+    "optima"
+   ]
+  ],
+  "tivoliir": [
+   [
+    "ssangyong",
+    "tivoliir"
+   ]
+  ],
+  "تیوولی مونتاژ": [
+   [
+    "ssangyong",
+    "tivoliir"
+   ]
+  ],
+  "x7": [
+   [
+    "samand",
+    "x7"
+   ]
+  ],
+  "veloster": [
+   [
+    "hyundai",
+    "veloster"
+   ]
+  ],
+  "ولستر": [
+   [
+    "hyundai",
+    "veloster"
+   ]
+  ],
+  "roniz": [
+   [
+    "nissan",
+    "roniz"
+   ]
+  ],
+  "رونیز": [
+   [
+    "nissan",
+    "roniz"
+   ]
+  ],
+  "b30": [
+   [
+    "besturn",
+    "b30"
+   ]
+  ],
+  "lx": [
+   [
+    "lexus",
+    "lx"
+   ],
+   [
+    "runna",
+    "lx"
+   ],
+   [
+    "samand",
+    "lx"
+   ],
+   [
+    "xtrim",
+    "lx"
+   ]
+  ],
+  "x1": [
+   [
+    "bmw",
+    "x1"
+   ]
+  ],
+  "j7": [
+   [
+    "kmc",
+    "j7"
+   ]
+  ],
+  "coupe": [
+   [
+    "hyundai",
+    "coupe"
+   ]
+  ],
+  "کوپه": [
+   [
+    "hyundai",
+    "coupe"
+   ]
+  ],
+  "corollahybrid": [
+   [
+    "toyota",
+    "corollahybrid"
+   ]
+  ],
+  "کرولا هیبرید": [
+   [
+    "toyota",
+    "corollahybrid"
+   ]
+  ],
+  "s5": [
+   [
+    "haima",
+    "s5"
+   ],
+   [
+    "jac",
+    "s5"
+   ]
+  ],
+  "arrizo5t": [
+   [
+    "chery",
+    "arrizo5t"
+   ]
+  ],
+  "اریزو 5t": [
+   [
+    "chery",
+    "arrizo5t"
+   ]
+  ],
+  "x50": [
+   [
+    "lifan",
+    "x50"
+   ]
+  ],
+  "tundarpickup": [
+   [
+    "renault",
+    "tundarpickup"
+   ]
+  ],
+  "تندر وانت": [
+   [
+    "renault",
+    "tundarpickup"
+   ]
+  ],
+  "520i": [
+   [
+    "lifan",
+    "520i"
+   ]
+  ],
+  "evoquel": [
+   [
+    "landrover",
+    "evoquel"
+   ]
+  ],
+  "رنجرور ایووک l": [
+   [
+    "landrover",
+    "evoquel"
+   ]
+  ],
+  "genesis": [
+   [
+    "hyundai",
+    "genesis"
+   ]
+  ],
+  "جنسیس": [
+   [
+    "hyundai",
+    "genesis"
+   ],
+   [
+    "hyundai",
+    "genesiscoupe"
+   ]
+  ],
+  "620": [
+   [
+    "lifan",
+    "620"
+   ]
+  ],
+  "s3": [
+   [
+    "jac",
+    "s3"
+   ]
+  ],
+  "sandero": [
+   [
+    "renault",
+    "sandero"
+   ]
+  ],
+  "ساندرو": [
+   [
+    "renault",
+    "sandero"
+   ]
+  ],
+  "cclass": [
+   [
+    "mercedesbenz",
+    "cclass"
+   ]
+  ],
+  "کلاس c": [
+   [
+    "mercedesbenz",
+    "cclass"
+   ]
+  ],
+  "clsclass": [
+   [
+    "mercedesbenz",
+    "clsclass"
+   ]
+  ],
+  "کلاس cls": [
+   [
+    "mercedesbenz",
+    "clsclass"
+   ]
+  ],
+  "emgrandx7": [
+   [
+    "geely",
+    "emgrandx7"
+   ]
+  ],
+  "امگرند x7": [
+   [
+    "geely",
+    "emgrandx7"
+   ]
+  ],
+  "550": [
+   [
+    "mg",
+    "550"
+   ],
+   [
+    "mvm",
+    "550"
+   ]
+  ],
+  "gx": [
+   [
+    "quick",
+    "gx"
+   ]
+  ],
+  "fjcruiser": [
+   [
+    "toyota",
+    "fjcruiser"
+   ]
+  ],
+  "اف جی کروز": [
+   [
+    "toyota",
+    "fjcruiser"
+   ]
+  ],
+  "وانت": [
+   [
+    "mazda",
+    "pickup"
+   ],
+   [
+    "peykan",
+    "pickup"
+   ]
+  ],
+  "3 وارداتی": [
+   [
+    "mazda",
+    "3"
+   ]
+  ],
+  "safrane": [
+   [
+    "renault",
+    "safrane"
+   ]
+  ],
+  "سفران": [
+   [
+    "renault",
+    "safrane"
+   ]
+  ],
+  "excel": [
+   [
+    "hyundai",
+    "excel"
+   ]
+  ],
+  "اکسل": [
+   [
+    "hyundai",
+    "excel"
+   ]
+  ],
+  "pickup4doorir": [
+   [
+    "mazda",
+    "pickup4doorir"
+   ]
+  ],
+  "وانت دوکابین": [
+   [
+    "mazda",
+    "pickup4doorir"
+   ]
+  ],
+  "pickup4door": [
+   [
+    "mazda",
+    "pickup4doorir"
+   ]
+  ],
+  "7series": [
+   [
+    "bmw",
+    "7series"
+   ]
+  ],
+  "سری 7": [
+   [
+    "bmw",
+    "7series"
+   ]
+  ],
+  "erx5": [
+   [
+    "roewe",
+    "erx5"
+   ]
+  ],
+  "x33": [
+   [
+    "mvm",
+    "x33"
+   ]
+  ],
+  "grandvitarahybrid": [
+   [
+    "suzuki",
+    "grandvitarahybrid"
+   ]
+  ],
+  "گراند ویتارا هیبرید": [
+   [
+    "suzuki",
+    "grandvitarahybrid"
+   ]
+  ],
+  "corollacrosshybrid": [
+   [
+    "toyota",
+    "corollacrosshybrid"
+   ]
+  ],
+  "کرولا کراس هیبرید": [
+   [
+    "toyota",
+    "corollacrosshybrid"
+   ]
+  ],
+  "matiz": [
+   [
+    "daewoo",
+    "matiz"
+   ]
+  ],
+  "ماتیز": [
+   [
+    "daewoo",
+    "matiz"
+   ]
+  ],
+  "galant": [
+   [
+    "mitsubishi",
+    "galant"
+   ]
+  ],
+  "گالانت": [
+   [
+    "mitsubishi",
+    "galant"
+   ]
+  ],
+  "cs55plus": [
+   [
+    "changan",
+    "cs55plus"
+   ]
+  ],
+  "cs 55 پلاس": [
+   [
+    "changan",
+    "cs55plus"
+   ]
+  ],
+  "charger": [
+   [
+    "dodge",
+    "charger"
+   ]
+  ],
+  "چارجر": [
+   [
+    "dodge",
+    "charger"
+   ]
+  ],
+  "gc6": [
+   [
+    "geely",
+    "gc6"
+   ]
+  ],
+  "s6": [
+   [
+    "byd",
+    "s6"
+   ]
+  ],
+  "t8": [
+   [
+    "kmc",
+    "t8"
+   ]
+  ],
+  "508": [
+   [
+    "peugeot",
+    "508"
+   ]
+  ],
+  "subam4": [
+   [
+    "farda",
+    "subam4"
+   ]
+  ],
+  "سوبا m4": [
+   [
+    "farda",
+    "subam4"
+   ]
+  ],
+  "troc": [
+   [
+    "volkswagen",
+    "troc"
+   ]
+  ],
+  "تی راک": [
+   [
+    "volkswagen",
+    "troc"
+   ]
+  ],
+  "arrizo5": [
+   [
+    "chery",
+    "arrizo5"
+   ]
+  ],
+  "اریزو 5": [
+   [
+    "chery",
+    "arrizo5"
+   ]
+  ],
+  "tiggo8pro": [
+   [
+    "fownix",
+    "tiggo8pro"
+   ]
+  ],
+  "تیگو 8 پرو": [
+   [
+    "fownix",
+    "tiggo8pro"
+   ]
+  ],
+  "h5": [
+   [
+    "hongqi",
+    "h5"
+   ]
+  ],
+  "دنده ای v1": [
+   [
+    "tara",
+    "manual"
+   ]
+  ],
+  "v1": [
+   [
+    "tara",
+    "manual"
+   ]
+  ],
+  "h220": [
+   [
+    "brilliance",
+    "h220"
+   ]
+  ],
+  "x35": [
+   [
+    "tigardmotor",
+    "x35"
+   ]
+  ],
+  "3seriessedan": [
+   [
+    "bmw",
+    "3seriessedan"
+   ]
+  ],
+  "سری 3 سدان": [
+   [
+    "bmw",
+    "3seriessedan"
+   ]
+  ],
+  "teanair": [
+   [
+    "nissan",
+    "teanair"
+   ]
+  ],
+  "تیانا مونتاژ": [
+   [
+    "nissan",
+    "teanair"
+   ]
+  ],
+  "teana": [
+   [
+    "nissan",
+    "teana-ir"
+   ],
+   [
+    "nissan",
+    "teanair"
+   ]
+  ],
+  "مگان وارداتی": [
+   [
+    "renault",
+    "megan"
+   ]
+  ],
+  "gs": [
+   [
+    "lexus",
+    "gs"
+   ],
+   [
+    "mg",
+    "gs"
+   ]
+  ],
+  "exmt": [
+   [
+    "saina",
+    "exmt"
+   ]
+  ],
+  "ex دنده ای": [
+   [
+    "saina",
+    "exmt"
+   ]
+  ],
+  "ex": [
+   [
+    "saina",
+    "exmt"
+   ]
+  ],
+  "xtrail": [
+   [
+    "nissan",
+    "xtrail"
+   ]
+  ],
+  "ایکس تریل": [
+   [
+    "nissan",
+    "xtrail"
+   ]
+  ],
+  "gt": [
+   [
+    "mg",
+    "gt"
+   ]
+  ],
+  "mokka": [
+   [
+    "opel",
+    "mokka"
+   ]
+  ],
+  "موکا": [
+   [
+    "opel",
+    "mokka"
+   ]
+  ],
+  "1 7": [
+   [
+    "dena",
+    "1.7"
+   ]
+  ],
+  "معمولی": [
+   [
+    "dena",
+    "1.7"
+   ]
+  ],
+  "el": [
+   [
+    "samand",
+    "el"
+   ]
+  ],
+  "is": [
+   [
+    "lexus",
+    "is"
+   ]
+  ],
+  "rdi": [
+   [
+    "peugeot",
+    "rdi"
+   ]
+  ],
+  "emgrand7": [
+   [
+    "geely",
+    "emgrand7"
+   ]
+  ],
+  "امگرند 7": [
+   [
+    "geely",
+    "emgrand7"
+   ]
+  ],
+  "arrizo8": [
+   [
+    "fownix",
+    "arrizo8"
+   ]
+  ],
+  "اریزو 8 z8": [
+   [
+    "fownix",
+    "arrizo8"
+   ]
+  ],
+  "patrol2doorir": [
+   [
+    "nissan",
+    "patrol2doorir"
+   ]
+  ],
+  "پاترول دو در": [
+   [
+    "nissan",
+    "patrol2doorir"
+   ]
+  ],
+  "patrol2door": [
+   [
+    "nissan",
+    "patrol2doorir"
+   ]
+  ],
+  "sedan": [
+   [
+    "peykan",
+    "sedan"
+   ],
+   [
+    "pride",
+    "sedan"
+   ],
+   [
+    "tiba",
+    "sedan"
+   ]
+  ],
+  "صندوق دار": [
+   [
+    "pride",
+    "sedan"
+   ],
+   [
+    "tiba",
+    "sedan"
+   ]
+  ],
+  "k7": [
+   [
+    "kmc",
+    "k7"
+   ]
+  ],
+  "2doors": [
+   [
+    "pazhan",
+    "2doors"
+   ]
+  ],
+  "دو در": [
+   [
+    "pazhan",
+    "2doors"
+   ]
+  ],
+  "b50": [
+   [
+    "besturn",
+    "b50"
+   ]
+  ],
+  "gl": [
+   [
+    "shahin",
+    "gl"
+   ]
+  ],
+  "gl دنده ای": [
+   [
+    "shahin",
+    "gl"
+   ]
+  ],
+  "ej7": [
+   [
+    "kmc",
+    "ej7"
+   ]
+  ],
+  "315sedan": [
+   [
+    "mvm",
+    "315sedan"
+   ]
+  ],
+  "315 صندوق دار": [
+   [
+    "mvm",
+    "315sedan"
+   ]
+  ],
+  "centennial": [
+   [
+    "hyundai",
+    "centennial"
+   ]
+  ],
+  "سنتنیال": [
+   [
+    "hyundai",
+    "centennial"
+   ]
+  ],
+  "2seriesgrancoupe": [
+   [
+    "bmw",
+    "2seriesgrancoupe"
+   ]
+  ],
+  "سری 2 گرن کوپه": [
+   [
+    "bmw",
+    "2seriesgrancoupe"
+   ]
+  ],
+  "سری 2 گرن": [
+   [
+    "bmw",
+    "2seriesgrancoupe"
+   ]
+  ],
+  "k5": [
+   [
+    "kia",
+    "k5"
+   ]
+  ],
+  "txl": [
+   [
+    "xtrim",
+    "txl"
+   ]
+  ],
+  "txl tx": [
+   [
+    "xtrim",
+    "txl"
+   ]
+  ],
+  "h230": [
+   [
+    "brilliance",
+    "h230"
+   ]
+  ],
+  "4seriesconvertible": [
+   [
+    "bmw",
+    "4seriesconvertible"
+   ]
+  ],
+  "سری 4 کروک": [
+   [
+    "bmw",
+    "4seriesconvertible"
+   ]
+  ],
+  "elite": [
+   [
+    "fidelity",
+    "elite"
+   ]
+  ],
+  "الیت": [
+   [
+    "fidelity",
+    "elite"
+   ]
+  ],
+  "veracruzix55": [
+   [
+    "hyundai",
+    "veracruzix55"
+   ]
+  ],
+  "وراکروز": [
+   [
+    "hyundai",
+    "veracruzix55"
+   ]
+  ],
+  "rextonir": [
+   [
+    "ssangyong",
+    "rextonir"
+   ]
+  ],
+  "رکستون مونتاژ": [
+   [
+    "ssangyong",
+    "rextonir"
+   ]
+  ],
+  "رکستون": [
+   [
+    "ssangyong",
+    "rextonir"
+   ]
+  ],
+  "rexton": [
+   [
+    "ssangyong",
+    "rextonir"
+   ]
+  ],
+  "wildlander": [
+   [
+    "toyota",
+    "wildlander"
+   ]
+  ],
+  "وایلدلندر": [
+   [
+    "toyota",
+    "wildlander"
+   ]
+  ],
+  "x55": [
+   [
+    "mvm",
+    "x55"
+   ]
+  ],
+  "j5": [
+   [
+    "jac",
+    "j5"
+   ]
+  ],
+  "جی 5": [
+   [
+    "jac",
+    "j5"
+   ]
+  ],
+  "arrizo6gt": [
+   [
+    "fownix",
+    "arrizo6gt"
+   ]
+  ],
+  "اریزو 6 جی تی z6 gt": [
+   [
+    "fownix",
+    "arrizo6gt"
+   ]
+  ],
+  "wingle3": [
+   [
+    "greatwall",
+    "wingle3"
+   ]
+  ],
+  "وینگل 3": [
+   [
+    "greatwall",
+    "wingle3"
+   ]
+  ],
+  "820": [
+   [
+    "lifan",
+    "820"
+   ]
+  ],
+  "avante": [
+   [
+    "hyundai",
+    "avante"
+   ]
+  ],
+  "اوانته": [
+   [
+    "hyundai",
+    "avante"
+   ]
+  ],
+  "parstondar": [
+   [
+    "renault",
+    "parstondar"
+   ]
+  ],
+  "پارس تندر": [
+   [
+    "renault",
+    "parstondar"
+   ]
+  ],
+  "eclipsecross": [
+   [
+    "mitsubishi",
+    "eclipsecross"
+   ]
+  ],
+  "اکلیپس کراس": [
+   [
+    "mitsubishi",
+    "eclipsecross"
+   ]
+  ],
+  "pk": [
+   [
+    "renault",
+    "pk"
+   ]
+  ],
+  "پی کی": [
+   [
+    "renault",
+    "pk"
+   ]
+  ],
+  "landcruiser2door": [
+   [
+    "toyota",
+    "landcruiser2door"
+   ]
+  ],
+  "لندکروز دو در": [
+   [
+    "toyota",
+    "landcruiser2door"
+   ]
+  ],
+  "cs35plus": [
+   [
+    "changan",
+    "cs35plus"
+   ]
+  ],
+  "cs 35 پلاس": [
+   [
+    "changan",
+    "cs35plus"
+   ]
+  ],
+  "free": [
+   [
+    "voyah",
+    "free"
+   ]
+  ],
+  "فری": [
+   [
+    "voyah",
+    "free"
+   ]
+  ],
+  "ens1": [
+   [
+    "honda",
+    "ens1"
+   ]
+  ],
+  "es": [
+   [
+    "lexus",
+    "es"
+   ]
+  ],
+  "verna": [
+   [
+    "hyundai",
+    "verna"
+   ]
+  ],
+  "ورنا": [
+   [
+    "hyundai",
+    "verna"
+   ]
+  ],
+  "ceratokoup": [
+   [
+    "kia",
+    "ceratokoup"
+   ]
+  ],
+  "سراتو کوپ": [
+   [
+    "kia",
+    "ceratokoup"
+   ]
+  ],
+  "cressida": [
+   [
+    "toyota",
+    "cressida"
+   ]
+  ],
+  "کریسیدا": [
+   [
+    "toyota",
+    "cressida"
+   ]
+  ],
+  "duster": [
+   [
+    "renault",
+    "duster"
+   ]
+  ],
+  "داستر": [
+   [
+    "renault",
+    "duster"
+   ]
+  ],
+  "v1p": [
+   [
+    "tara",
+    "v1p"
+   ]
+  ],
+  "دنده ای v1 پلاس": [
+   [
+    "tara",
+    "v1p"
+   ]
+  ],
+  "v1 پلاس": [
+   [
+    "tara",
+    "v1p"
+   ]
+  ],
+  "tondar90station": [
+   [
+    "renault",
+    "tondar90station"
+   ]
+  ],
+  "تندر 90 استیشن": [
+   [
+    "renault",
+    "tondar90station"
+   ]
+  ],
+  "vs7": [
+   [
+    "jetta",
+    "vs7"
+   ]
+  ],
+  "clclass": [
+   [
+    "mercedesbenz",
+    "clclass"
+   ]
+  ],
+  "کلاس cl": [
+   [
+    "mercedesbenz",
+    "clclass"
+   ]
+  ],
+  "idunyx": [
+   [
+    "volkswagen",
+    "idunyx"
+   ]
+  ],
+  "ای دی یونیکس": [
+   [
+    "volkswagen",
+    "idunyx"
+   ]
+  ],
+  "fronxhybrid": [
+   [
+    "suzuki",
+    "fronxhybrid"
+   ]
+  ],
+  "فرانکس هیبرید": [
+   [
+    "suzuki",
+    "fronxhybrid"
+   ]
+  ],
+  "511": [
+   [
+    "farda",
+    "511"
+   ]
+  ],
+  "panamera": [
+   [
+    "porsche",
+    "panamera"
+   ]
+  ],
+  "پانامرا": [
+   [
+    "porsche",
+    "panamera"
+   ]
+  ],
+  "scala": [
+   [
+    "renault",
+    "scala"
+   ]
+  ],
+  "اسکالا": [
+   [
+    "renault",
+    "scala"
+   ]
+  ],
+  "passat": [
+   [
+    "volkswagen",
+    "passat"
+   ]
+  ],
+  "پاسات": [
+   [
+    "volkswagen",
+    "passat"
+   ]
+  ],
+  "h1": [
+   [
+    "hyundai",
+    "h1"
+   ]
+  ],
+  "plusat": [
+   [
+    "shahin",
+    "plusat"
+   ]
+  ],
+  "پلاس اتوماتیک at": [
+   [
+    "shahin",
+    "plusat"
+   ]
+  ],
+  "پلاس at": [
+   [
+    "shahin",
+    "plusat"
+   ]
+  ],
+  "q5etron": [
+   [
+    "audi",
+    "q5etron"
+   ]
+  ],
+  "q5 e tron": [
+   [
+    "audi",
+    "q5 e-tron"
+   ],
+   [
+    "audi",
+    "q5etron"
+   ]
+  ],
+  "soren": [
+   [
+    "samand",
+    "soren"
+   ]
+  ],
+  "سورن": [
+   [
+    "samand",
+    "soren"
+   ]
+  ],
+  "songplusdmi": [
+   [
+    "byd",
+    "songplusdmi"
+   ]
+  ],
+  "سانگ پلاس dmi": [
+   [
+    "byd",
+    "songplusdmi"
+   ]
+  ],
+  "h320": [
+   [
+    "brilliance",
+    "h320"
+   ]
+  ],
+  "newkorando": [
+   [
+    "ssangyong",
+    "newkorando"
+   ]
+  ],
+  "کوراندو": [
+   [
+    "ssangyong",
+    "korando"
+   ],
+   [
+    "ssangyong",
+    "newkorando"
+   ]
+  ],
+  "vonline": [
+   [
+    "venucia",
+    "vonline"
+   ]
+  ],
+  "وی انلاین": [
+   [
+    "venucia",
+    "vonline"
+   ]
+  ],
+  "c30": [
+   [
+    "great-wall",
+    "c30"
+   ],
+   [
+    "greatwall",
+    "c30"
+   ]
+  ],
+  "claclass": [
+   [
+    "mercedesbenz",
+    "claclass"
+   ]
+  ],
+  "کلاس cla": [
+   [
+    "mercedesbenz",
+    "claclass"
+   ]
+  ],
+  "jimny3door": [
+   [
+    "suzuki",
+    "jimny3door"
+   ]
+  ],
+  "جیمنی 3 در": [
+   [
+    "suzuki",
+    "jimny3door"
+   ]
+  ],
+  "landcruiserhybrid": [
+   [
+    "toyota",
+    "landcruiserhybrid"
+   ]
+  ],
+  "لندکروزر هیبرید": [
+   [
+    "toyota",
+    "landcruiserhybrid"
+   ]
+  ],
+  "سدان": [
+   [
+    "peykan",
+    "sedan"
+   ]
+  ],
+  "quattroporte": [
+   [
+    "maserati",
+    "quattroporte"
+   ]
+  ],
+  "کواتروپورته": [
+   [
+    "maserati",
+    "quattroporte"
+   ]
+  ],
+  "glkclass": [
+   [
+    "mercedesbenz",
+    "glkclass"
+   ]
+  ],
+  "کلاس glk": [
+   [
+    "mercedesbenz",
+    "glkclass"
+   ]
+  ],
+  "chrhybrid": [
+   [
+    "toyota",
+    "chrhybrid"
+   ]
+  ],
+  "c hr هیبرید": [
+   [
+    "toyota",
+    "chrhybrid"
+   ]
+  ],
+  "wingle5": [
+   [
+    "greatwall",
+    "wingle5"
+   ]
+  ],
+  "وینگل 5 دو کابین": [
+   [
+    "greatwall",
+    "wingle5"
+   ]
+  ],
+  "slclass": [
+   [
+    "mercedesbenz",
+    "slclass"
+   ]
+  ],
+  "کلاس sl": [
+   [
+    "mercedesbenz",
+    "slclass"
+   ]
+  ],
+  "sunny": [
+   [
+    "nissan",
+    "sunny"
+   ]
+  ],
+  "سانی": [
+   [
+    "nissan",
+    "sunny"
+   ]
+  ],
+  "4seriesgrancoupe": [
+   [
+    "bmw",
+    "4seriesgrancoupe"
+   ]
+  ],
+  "سری 4 گرن کوپه": [
+   [
+    "bmw",
+    "4seriesgrancoupe"
+   ]
+  ],
+  "سری 4 گرن": [
+   [
+    "bmw",
+    "4seriesgrancoupe"
+   ]
+  ],
+  "crown": [
+   [
+    "toyota",
+    "crown"
+   ]
+  ],
+  "کراون": [
+   [
+    "toyota",
+    "crown"
+   ]
+  ],
+  "outlander": [
+   [
+    "mitsubishi",
+    "outlander"
+   ]
+  ],
+  "اوتلندر": [
+   [
+    "mitsubishi",
+    "outlander"
+   ]
+  ],
+  "omega": [
+   [
+    "opel",
+    "omega"
+   ]
+  ],
+  "امگا": [
+   [
+    "opel",
+    "omega"
+   ]
+  ],
+  "korando": [
+   [
+    "ssangyong",
+    "korando"
+   ]
+  ],
+  "کوراندو مونتاژ": [
+   [
+    "ssangyong",
+    "korando"
+   ]
+  ],
+  "141": [
+   [
+    "pride",
+    "141"
+   ]
+  ],
+  "c3xr": [
+   [
+    "citroen",
+    "c3xr"
+   ]
+  ],
+  "c3 xr": [
+   [
+    "citroen",
+    "c3xr"
+   ]
+  ],
+  "musso": [
+   [
+    "ssangyong",
+    "musso"
+   ]
+  ],
+  "موسو": [
+   [
+    "ssangyong",
+    "musso"
+   ]
+  ],
+  "2seriesactivetourer": [
+   [
+    "bmw",
+    "2seriesactivetourer"
+   ]
+  ],
+  "سری 2 اکتیوتورر": [
+   [
+    "bmw",
+    "2seriesactivetourer"
+   ]
+  ],
+  "astrasedan": [
+   [
+    "opel",
+    "astrasedan"
+   ]
+  ],
+  "استرا سدان": [
+   [
+    "opel",
+    "astrasedan"
+   ]
+  ],
+  "520": [
+   [
+    "lifan",
+    "520"
+   ]
+  ],
+  "empow": [
+   [
+    "gacgonow",
+    "empow"
+   ]
+  ],
+  "امپو": [
+   [
+    "gacgonow",
+    "empow"
+   ]
+  ],
+  "golf": [
+   [
+    "volkswagen",
+    "golf"
+   ]
+  ],
+  "گلف": [
+   [
+    "volkswagen",
+    "golf"
+   ]
+  ],
+  "h2": [
+   [
+    "haval",
+    "h2"
+   ]
+  ],
+  "h2 مونتاژی": [
+   [
+    "haval",
+    "h2"
+   ]
+  ],
+  "h2 ی": [
+   [
+    "haval",
+    "h2"
+   ]
+  ],
+  "ii": [
+   [
+    "sinad",
+    "ii"
+   ]
+  ],
+  "se": [
+   [
+    "samand",
+    "se"
+   ]
+  ],
+  "4doors": [
+   [
+    "pazhan",
+    "4doors"
+   ]
+  ],
+  "چهار در": [
+   [
+    "pazhan",
+    "4doors"
+   ]
+  ],
+  "gas": [
+   [
+    "arisun",
+    "gas"
+   ]
+  ],
+  "بنزینی": [
+   [
+    "arisun",
+    "gas"
+   ]
+  ],
+  "at": [
+   [
+    "saina",
+    "at"
+   ]
+  ],
+  "اتوماتیک": [
+   [
+    "saina",
+    "at"
+   ]
+  ],
+  "gxlmt": [
+   [
+    "saina",
+    "gxlmt"
+   ]
+  ],
+  "gxl دنده ای": [
+   [
+    "saina",
+    "gxlmt"
+   ]
+  ],
+  "gxl": [
+   [
+    "saina",
+    "gxlmt"
+   ]
+  ],
+  "tucsonl": [
+   [
+    "hyundai",
+    "tucsonl"
+   ]
+  ],
+  "توسان l": [
+   [
+    "hyundai",
+    "tucsonl"
+   ]
+  ],
+  "kona": [
+   [
+    "hyundai",
+    "kona"
+   ]
+  ],
+  "کونا": [
+   [
+    "hyundai",
+    "kona"
+   ]
+  ],
+  "genesiscoupe": [
+   [
+    "hyundai",
+    "genesiscoupe"
+   ]
+  ],
+  "جنسیس کوپه": [
+   [
+    "hyundai",
+    "genesiscoupe"
+   ]
+  ],
+  "i30": [
+   [
+    "hyundai",
+    "i30"
+   ]
+  ],
+  "elantrair": [
+   [
+    "hyundai",
+    "elantrair"
+   ]
+  ],
+  "النترا مونتاژ": [
+   [
+    "hyundai",
+    "elantrair"
+   ]
+  ],
+  "creta": [
+   [
+    "hyundai",
+    "creta"
+   ]
+  ],
+  "کرتا": [
+   [
+    "hyundai",
+    "creta"
+   ]
+  ],
+  "i10ir": [
+   [
+    "hyundai",
+    "i10ir"
+   ]
+  ],
+  "i10 مونتاژ": [
+   [
+    "hyundai",
+    "i10ir"
+   ]
+  ],
+  "i10": [
+   [
+    "hyundai",
+    "i10ir"
+   ]
+  ],
+  "h350": [
+   [
+    "hyundai",
+    "h350"
+   ]
+  ],
+  "h 350": [
+   [
+    "hyundai",
+    "h350"
+   ]
+  ],
+  "sonet": [
+   [
+    "kia",
+    "sonet"
+   ]
+  ],
+  "سونت": [
+   [
+    "kia",
+    "sonet"
+   ]
+  ],
+  "carens": [
+   [
+    "kia",
+    "carens"
+   ]
+  ],
+  "کارنز": [
+   [
+    "kia",
+    "carens"
+   ]
+  ],
+  "k3": [
+   [
+    "kia",
+    "k3"
+   ]
+  ],
+  "opirus": [
+   [
+    "kia",
+    "opirus"
+   ]
+  ],
+  "اپیروس": [
+   [
+    "kia",
+    "opirus"
+   ]
+  ],
+  "besta": [
+   [
+    "kia",
+    "besta"
+   ]
+  ],
+  "بستا": [
+   [
+    "kia",
+    "besta"
+   ]
+  ],
+  "riohatchback": [
+   [
+    "kia",
+    "riohatchback"
+   ]
+  ],
+  "ریو هاچ بک": [
+   [
+    "kia",
+    "riohatchback"
+   ]
+  ],
+  "picanto": [
+   [
+    "kia",
+    "picanto"
+   ]
+  ],
+  "پیکانتو": [
+   [
+    "kia",
+    "picanto"
+   ]
+  ],
+  "corollacross": [
+   [
+    "toyota",
+    "corollacross"
+   ]
+  ],
+  "کرولا کراس": [
+   [
+    "toyota",
+    "corollacross"
+   ]
+  ],
+  "3hatchback": [
+   [
+    "mazda",
+    "3hatchback"
+   ]
+  ],
+  "3 نیو هاچ بک": [
+   [
+    "mazda",
+    "3hatchback"
+   ]
+  ],
+  "ez60erev": [
+   [
+    "mazda",
+    "ez60erev"
+   ]
+  ],
+  "ez60 erev": [
+   [
+    "mazda",
+    "ez60erev"
+   ]
+  ],
+  "2ir": [
+   [
+    "mazda",
+    "2ir"
+   ]
+  ],
+  "2 هاچ بک": [
+   [
+    "mazda",
+    "2ir"
+   ]
+  ],
+  "cx30": [
+   [
+    "mazda",
+    "cx30"
+   ]
+  ],
+  "cx 30": [
+   [
+    "mazda",
+    "cx30"
+   ]
+  ],
+  "وانت وارداتی": [
+   [
+    "mazda",
+    "pickup"
+   ]
+  ],
+  "cx50": [
+   [
+    "mazda",
+    "cx50"
+   ]
+  ],
+  "cx 50": [
+   [
+    "mazda",
+    "cx50"
+   ]
+  ],
+  "8s": [
+   [
+    "haima",
+    "8s"
+   ]
+  ],
+  "arrizo6": [
+   [
+    "chery",
+    "arrizo6"
+   ]
+  ],
+  "اریزو 6": [
+   [
+    "chery",
+    "arrizo6"
+   ]
+  ],
+  "viana": [
+   [
+    "chery",
+    "viana"
+   ]
+  ],
+  "ویانا": [
+   [
+    "chery",
+    "viana"
+   ]
+  ],
+  "j3hatchback": [
+   [
+    "jac",
+    "j3hatchback"
+   ]
+  ],
+  "جی 3 هاچ بک": [
+   [
+    "jac",
+    "j3hatchback"
+   ]
+  ],
+  "جی 3": [
+   [
+    "jac",
+    "j3hatchback"
+   ]
+  ],
+  "fluence": [
+   [
+    "renault",
+    "fluence"
+   ]
+  ],
+  "فلوئنس": [
+   [
+    "renault",
+    "fluence"
+   ]
+  ],
+  "arkanaxm3": [
+   [
+    "renault",
+    "arkanaxm3"
+   ]
+  ],
+  "ارکانا xm3": [
+   [
+    "renault",
+    "arkanaxm3"
+   ]
+  ],
+  "lagunahatchback": [
+   [
+    "renault",
+    "lagunahatchback"
+   ]
+  ],
+  "لاگونا هاچ بک": [
+   [
+    "renault",
+    "lagunahatchback"
+   ]
+  ],
+  "لاگونا": [
+   [
+    "renault",
+    "lagunahatchback"
+   ]
+  ],
+  "x2": [
+   [
+    "bmw",
+    "x2"
+   ]
+  ],
+  "3seriesconvertible": [
+   [
+    "bmw",
+    "3seriesconvertible"
+   ]
+  ],
+  "سری 3 کروک": [
+   [
+    "bmw",
+    "3seriesconvertible"
+   ]
+  ],
+  "iseries": [
+   [
+    "bmw",
+    "iseries"
+   ]
+  ],
+  "سری i": [
+   [
+    "bmw",
+    "iseries"
+   ]
+  ],
+  "x6": [
+   [
+    "bmw",
+    "x6"
+   ]
+  ],
+  "4seriescoupe": [
+   [
+    "bmw",
+    "4seriescoupe"
+   ]
+  ],
+  "سری 4 کوپه": [
+   [
+    "bmw",
+    "4seriescoupe"
+   ]
+  ],
+  "سری 4": [
+   [
+    "bmw",
+    "4seriescoupe"
+   ]
+  ],
+  "ix1": [
+   [
+    "bmw",
+    "ix1"
+   ]
+  ],
+  "6seriescoupe": [
+   [
+    "bmw",
+    "6seriescoupe"
+   ]
+  ],
+  "سری 6 کوپه": [
+   [
+    "bmw",
+    "6seriescoupe"
+   ]
+  ],
+  "سری 6": [
+   [
+    "bmw",
+    "6seriescoupe"
+   ]
+  ],
+  "6seriesconvertible": [
+   [
+    "bmw",
+    "6seriesconvertible"
+   ]
+  ],
+  "سری 6 کروک": [
+   [
+    "bmw",
+    "6seriesconvertible"
+   ]
+  ],
+  "z4": [
+   [
+    "bmw",
+    "z4"
+   ]
+  ],
+  "2seriescoupe": [
+   [
+    "bmw",
+    "2seriescoupe"
+   ]
+  ],
+  "سری 2 کوپه": [
+   [
+    "bmw",
+    "2seriescoupe"
+   ]
+  ],
+  "سری 2": [
+   [
+    "bmw",
+    "2seriescoupe"
+   ]
+  ],
+  "1series": [
+   [
+    "bmw",
+    "1series"
+   ]
+  ],
+  "سری 1 هاچ بک": [
+   [
+    "bmw",
+    "1series"
+   ]
+  ],
+  "سری 1": [
+   [
+    "bmw",
+    "1series"
+   ]
+  ],
+  "classic": [
+   [
+    "bmw",
+    "classic"
+   ]
+  ],
+  "کلاسیک": [
+   [
+    "bmw",
+    "classic"
+   ]
+  ],
+  "3seriesgt": [
+   [
+    "bmw",
+    "3seriesgt"
+   ]
+  ],
+  "سری 3 gt": [
+   [
+    "bmw",
+    "3seriesgt"
+   ]
+  ],
+  "2seriesconvertible": [
+   [
+    "bmw",
+    "2seriesconvertible"
+   ]
+  ],
+  "سری 2 کروک": [
+   [
+    "bmw",
+    "2seriesconvertible"
+   ]
+  ],
+  "6seriesgrancoupe": [
+   [
+    "bmw",
+    "6seriesgrancoupe"
+   ]
+  ],
+  "سری 6 گرن کوپه": [
+   [
+    "bmw",
+    "6seriesgrancoupe"
+   ]
+  ],
+  "سری 6 گرن": [
+   [
+    "bmw",
+    "6seriesgrancoupe"
+   ]
+  ],
+  "110s": [
+   [
+    "mvm",
+    "110s"
+   ]
+  ],
+  "arrizo5ev": [
+   [
+    "mvm",
+    "arrizo5ev"
+   ]
+  ],
+  "اریزو 5ev": [
+   [
+    "mvm",
+    "arrizo5ev"
+   ]
+  ],
+  "a5": [
+   [
+    "kmc",
+    "a5"
+   ]
+  ],
+  "eagle": [
+   [
+    "kmc",
+    "eagle"
+   ]
+  ],
+  "ایگل": [
+   [
+    "kmc",
+    "eagle"
+   ]
+  ],
+  "sr6": [
+   [
+    "kmc",
+    "sr6"
+   ]
+  ],
+  "murano": [
+   [
+    "nissan",
+    "murano"
+   ],
+   [
+    "nissan",
+    "muranoir"
+   ]
+  ],
+  "مورانو": [
+   [
+    "nissan",
+    "murano"
+   ],
+   [
+    "nissan",
+    "muranoir"
+   ]
+  ],
+  "qashqai": [
+   [
+    "nissan",
+    "qashqai"
+   ],
+   [
+    "nissan",
+    "qashqaiir"
+   ]
+  ],
+  "قشقایی": [
+   [
+    "nissan",
+    "qashqai"
+   ],
+   [
+    "nissan",
+    "qashqaiir"
+   ]
+  ],
+  "sylphyepower": [
+   [
+    "nissan",
+    "sylphyepower"
+   ]
+  ],
+  "سیلفی e power": [
+   [
+    "nissan",
+    "sylphyepower"
+   ]
+  ],
+  "patrolim": [
+   [
+    "nissan",
+    "patrolim"
+   ]
+  ],
+  "پاترول وارداتی": [
+   [
+    "nissan",
+    "patrolim"
+   ]
+  ],
+  "پاترول": [
+   [
+    "nissan",
+    "patrolim"
+   ]
+  ],
+  "patrolpickup": [
+   [
+    "nissan",
+    "patrolpickup"
+   ]
+  ],
+  "پاترول وانت": [
+   [
+    "nissan",
+    "patrolpickup"
+   ]
+  ],
+  "sentra": [
+   [
+    "nissan",
+    "sentra"
+   ]
+  ],
+  "سنترا": [
+   [
+    "nissan",
+    "sentra"
+   ]
+  ],
+  "armada": [
+   [
+    "nissan",
+    "armada"
+   ]
+  ],
+  "ارمادا": [
+   [
+    "nissan",
+    "armada"
+   ]
+  ],
+  "kicks": [
+   [
+    "nissan",
+    "kicks"
+   ]
+  ],
+  "کیکس": [
+   [
+    "nissan",
+    "kicks"
+   ]
+  ],
+  "seranza": [
+   [
+    "nissan",
+    "seranza"
+   ]
+  ],
+  "سرانزا": [
+   [
+    "nissan",
+    "seranza"
+   ]
+  ],
+  "maximaim": [
+   [
+    "nissan",
+    "maximaim"
+   ]
+  ],
+  "ماکسیما وارداتی": [
+   [
+    "nissan",
+    "maximaim"
+   ]
+  ],
+  "pickupir1cab": [
+   [
+    "nissan",
+    "pickupir1cab"
+   ]
+  ],
+  "پیکاپ تک کابین": [
+   [
+    "nissan",
+    "pickupir1cab"
+   ]
+  ],
+  "qashqaiir": [
+   [
+    "nissan",
+    "qashqaiir"
+   ]
+  ],
+  "قشقایی مونتاژ": [
+   [
+    "nissan",
+    "qashqaiir"
+   ]
+  ],
+  "muranoir": [
+   [
+    "nissan",
+    "muranoir"
+   ]
+  ],
+  "مورانو مونتاژ": [
+   [
+    "nissan",
+    "muranoir"
+   ]
+  ],
+  "132": [
+   [
+    "pride",
+    "132"
+   ]
+  ],
+  "207i": [
+   [
+    "peugeot",
+    "207i"
+   ]
+  ],
+  "3n sedan ir": [
+   [
+    "mazda",
+    "3n sedan-ir"
+   ]
+  ],
+  "3n sedan": [
+   [
+    "mazda",
+    "3n sedan-ir"
+   ]
+  ],
+  "tucson ix35": [
+   [
+    "hyundai",
+    "tucson-ix35"
+   ]
+  ],
+  "prado 2door": [
+   [
+    "toyota",
+    "prado 2door"
+   ]
+  ],
+  "arrizo 5te": [
+   [
+    "chery",
+    "arrizo 5te"
+   ]
+  ],
+  "santafe ix45": [
+   [
+    "hyundai",
+    "santafe ix45"
+   ]
+  ],
+  "grand vitara": [
+   [
+    "suzuki",
+    "grand-vitara"
+   ],
+   [
+    "suzuki",
+    "grand-vitara-ir"
+   ]
+  ],
+  "sonata yf": [
+   [
+    "hyundai",
+    "sonata-yf"
+   ]
+  ],
+  "yaris sedan": [
+   [
+    "toyota",
+    "yaris sedan"
+   ]
+  ],
+  "sylphy": [
+   [
+    "nissan",
+    "sylphy"
+   ]
+  ],
+  "3 ir": [
+   [
+    "mazda",
+    "3-ir"
+   ]
+  ],
+  "tayronl": [
+   [
+    "volkswagen",
+    "tayronl"
+   ]
+  ],
+  "maxima ir": [
+   [
+    "nissan",
+    "maxima-ir"
+   ]
+  ],
+  "315 hatchback": [
+   [
+    "mvm",
+    "315 hatchback"
+   ]
+  ],
+  "h9": [
+   [
+    "haval",
+    "h9"
+   ]
+  ],
+  "qin plus": [
+   [
+    "byd",
+    "qin plus"
+   ]
+  ],
+  "c hr": [
+   [
+    "toyota",
+    "c-hr"
+   ]
+  ],
+  "accordephev": [
+   [
+    "honda",
+    "accordephev"
+   ]
+  ],
+  "grand vitara ir": [
+   [
+    "suzuki",
+    "grand-vitara-ir"
+   ]
+  ],
+  "civic": [
+   [
+    "honda",
+    "civic"
+   ]
+  ],
+  "lancer": [
+   [
+    "mitsubishi",
+    "lancer"
+   ]
+  ],
+  "id unyx": [
+   [
+    "volkswagen",
+    "id unyx"
+   ]
+  ],
+  "teana ir": [
+   [
+    "nissan",
+    "teana-ir"
+   ]
+  ],
+  "levin": [
+   [
+    "toyota",
+    "levin"
+   ]
+  ],
+  "4 door": [
+   [
+    "pazhan",
+    "4 door"
+   ]
+  ],
+  "t5": [
+   [
+    "farda",
+    "t5"
+   ]
+  ],
+  "4 series coupe": [
+   [
+    "bmw",
+    "4 series coupe"
+   ]
+  ],
+  "6 series convertible": [
+   [
+    "bmw",
+    "6 series convertible"
+   ]
+  ],
+  "s7 plus": [
+   [
+    "haima",
+    "s7 plus"
+   ]
+  ],
+  "tiggo 5": [
+   [
+    "chery",
+    "tiggo 5"
+   ]
+  ],
+  "tondar 90": [
+   [
+    "renault",
+    "tondar 90"
+   ]
+  ],
+  "v5": [
+   [
+    "rayen",
+    "v5"
+   ]
+  ],
+  "sandero stepway": [
+   [
+    "renault",
+    "sandero-stepway"
+   ]
+  ],
+  "tiggo 7 pro": [
+   [
+    "fownix",
+    "tiggo 7 pro"
+   ]
+  ],
+  "h30 cross": [
+   [
+    "dongfeng",
+    "h30 cross"
+   ]
+  ],
+  "u75": [
+   [
+    "aventra",
+    "u75"
+   ]
+  ],
+  "asna": [
+   [
+    "amico",
+    "asna"
+   ]
+  ],
+  "5 series sedan": [
+   [
+    "bmw",
+    "5 series sedan"
+   ]
+  ],
+  "1 series hatchback": [
+   [
+    "bmw",
+    "1 series hatchback"
+   ]
+  ],
+  "arrizo 6": [
+   [
+    "fownix",
+    "arrizo 6"
+   ],
+   [
+    "mvm",
+    "arrizo 6"
+   ]
+  ],
+  "accent ir": [
+   [
+    "hyundai",
+    "accent-ir"
+   ]
+  ],
+  "megan ir": [
+   [
+    "renault",
+    "megan-ir"
+   ]
+  ],
+  "azera grandeur": [
+   [
+    "hyundai",
+    "azera grandeur"
+   ]
+  ],
+  "tiggo 8 pro max": [
+   [
+    "fownix",
+    "tiggo 8 pro max"
+   ]
+  ],
+  "basic": [
+   [
+    "dena",
+    "basic"
+   ]
+  ],
+  "bz4x": [
+   [
+    "toyota",
+    "bz4x"
+   ]
+  ],
+  "eado ev460": [
+   [
+    "changan",
+    "eado ev460"
+   ]
+  ],
+  "tiggo 7 pro max": [
+   [
+    "fownix",
+    "tiggo 7 pro max"
+   ]
+  ],
+  "arrizo 5": [
+   [
+    "chery",
+    "arrizo 5"
+   ],
+   [
+    "mvm",
+    "arrizo 5"
+   ]
+  ],
+  "f3": [
+   [
+    "byd",
+    "f3"
+   ]
+  ],
+  "chairman": [
+   [
+    "ssangyong",
+    "chairman"
+   ]
+  ],
+  "ciaz": [
+   [
+    "suzuki",
+    "ciaz"
+   ]
+  ],
+  "rio ir": [
+   [
+    "kia",
+    "rio-ir"
+   ]
+  ],
+  "c class": [
+   [
+    "mercedes-benz",
+    "c class"
+   ]
+  ],
+  "e class": [
+   [
+    "mercedes-benz",
+    "e class"
+   ]
+  ],
+  "h6": [
+   [
+    "haval",
+    "h6"
+   ]
+  ],
+  "ez 60": [
+   [
+    "mazda",
+    "ez-60"
+   ]
+  ],
+  "baleno": [
+   [
+    "suzuki",
+    "baleno"
+   ]
+  ],
+  "i20 ir": [
+   [
+    "hyundai",
+    "i20-ir"
+   ]
+  ],
+  "cerato ir": [
+   [
+    "kia",
+    "cerato-ir"
+   ]
+  ],
+  "407": [
+   [
+    "peugeot",
+    "407"
+   ]
+  ],
+  "new korando": [
+   [
+    "ssangyong",
+    "new-korando"
+   ]
+  ],
+  "3 series sedan": [
+   [
+    "bmw",
+    "3 series sedan"
+   ]
+  ],
+  "actyon": [
+   [
+    "ssangyong",
+    "actyon"
+   ]
+  ],
+  "cs35 plus": [
+   [
+    "changan",
+    "cs35 plus"
+   ]
+  ],
+  "x35 plus": [
+   [
+    "tigard",
+    "x35 plus"
+   ]
+  ],
+  "فروش دولتی": [
+   [
+    "pride",
+    "111"
+   ],
+   [
+    "pride",
+    "131"
+   ],
+   [
+    "pride",
+    "132"
+   ],
+   [
+    "pride",
+    "pickup"
+   ],
+   [
+    "samand",
+    "lx"
+   ],
+   [
+    "samand",
+    "soren"
+   ],
+   [
+    "samand",
+    "x7"
+   ],
+   [
+    "tara",
+    "manual"
+   ]
+  ],
+  "فروش سازمانی": [
+   [
+    "pride",
+    "111"
+   ],
+   [
+    "pride",
+    "131"
+   ],
+   [
+    "pride",
+    "pickup"
+   ],
+   [
+    "tara",
+    "manual"
+   ]
+  ],
+  "ez6": [
+   [
+    "mazda",
+    "ez6"
+   ]
+  ],
+  "qinl": [
+   [
+    "byd",
+    "qinl"
+   ]
+  ],
+  "tissans05": [
+   [
+    "tigardmotor",
+    "tissans05"
+   ]
+  ],
+  "u75plus": [
+   [
+    "aventra",
+    "u75plus"
+   ]
+  ],
+  "x77": [
+   [
+    "mvm",
+    "x77"
+   ]
+  ],
+  "eadoev460": [
+   [
+    "changan",
+    "eadoev460"
+   ]
+  ],
+  "frontlander": [
+   [
+    "toyota",
+    "frontlander"
+   ]
+  ],
+  "sealion6dmi": [
+   [
+    "byd",
+    "sealion6dmi"
+   ]
+  ],
+  "کایرون2012": [
+   [
+    "ssangyong",
+    "kyron"
+   ]
+  ],
+  "palisade": [
+   [
+    "hyundai",
+    "palisade"
+   ]
+  ],
+  "ال ایکس": [
+   [
+    "lexus",
+    "lx"
+   ],
+   [
+    "runna",
+    "lx"
+   ],
+   [
+    "samand",
+    "lx"
+   ],
+   [
+    "xtrim",
+    "lx"
+   ]
+  ],
+  "ال 90": [
+   [
+    "renault",
+    "tondar90"
+   ]
+  ],
+  "ای ال 90": [
+   [
+    "renault",
+    "tondar90"
+   ]
+  ],
+  "پژو پارس": [
+   [
+    "peugeot",
+    "pars"
+   ]
+  ]
+ },
+ "brand_fa": {
+  "kmc": "کی ام سی",
+  "peugeot": "پژو",
+  "shahin": "شاهین",
+  "zamyad": "زامیاد",
+  "dignity": "دیگنیتی",
+  "swm": "اس دبلیو ام",
+  "volkswagen": "فولکس",
+  "zotye": "زوتی",
+  "lucano": "لوکانو",
+  "bmw": "ب ام و",
+  "respect": "ریسپکت",
+  "nissan": "نیسان",
+  "cara": "کارا",
+  "toyota": "تویوتا",
+  "mg": "ام جی",
+  "quick": "کوییک",
+  "foton": "فوتون",
+  "mercedesbenz": "بنز",
+  "mvm": "ام وی ام",
+  "hyundai": "هیوندای",
+  "volvo": "ولوو",
+  "dena": "دنا",
+  "soueast": "سوئیست",
+  "renault": "رنو",
+  "citroen": "سیتروئن",
+  "kia": "کیا",
+  "dongfeng": "دانگ فنگ",
+  "maxmotor": "مکث موتور",
+  "tara": "تارا",
+  "mazda": "مزدا",
+  "fownix": "فونیکس",
+  "changan": "چانگان",
+  "haval": "هاوال",
+  "pride": "پراید",
+  "xtrim": "اکستریم",
+  "audi": "آئودی",
+  "haima": "هایما",
+  "alfaromeo": "آلفارومئو",
+  "suzuki": "سوزوکی",
+  "bestune": "بستیون",
+  "tank": "تانک",
+  "capra": "کاپرا",
+  "chery": "چری",
+  "fidelity": "فیدلیتی",
+  "porsche": "پورشه",
+  "ssangyong": "سانگ یانگ (KGM)",
+  "amico": "آمیکو",
+  "lifan": "لیفان",
+  "honda": "هوندا",
+  "lamari": "لاماری",
+  "geely": "جیلی",
+  "lexus": "لکسوس",
+  "brilliance": "برلیانس",
+  "atlas": "اطلس",
+  "daewoo": "دوو",
+  "tiba": "تیبا",
+  "gaz": "گاز",
+  "farda": "فردا",
+  "fiat": "فیات",
+  "arisun": "آریسان",
+  "jac": "جک",
+  "inroads": "اینرودز",
+  "mitsubishi": "میتسوبیشی",
+  "borgward": "بورگوارد",
+  "samand": "سمند",
+  "besturn": "بسترن",
+  "landrover": "لندرور",
+  "peykan": "پیکان",
+  "roewe": "روئوه",
+  "saina": "ساینا",
+  "dodge": "دوج",
+  "byd": "بی وای دی",
+  "hongqi": "هونگچی",
+  "tigardmotor": "تیگارد",
+  "opel": "اپل",
+  "pazhan": "پاژن",
+  "greatwall": "گریت وال",
+  "voyah": "وویا",
+  "jetta": "جتا",
+  "venucia": "ونوسیا",
+  "maserati": "مازراتی",
+  "gacgonow": "جی ای سی",
+  "sinad": "سیناد",
+  "rana": "رانا",
+  "saipa": "سایپا",
+  "benz": "بنز",
+  "bac": "بی ای سی",
+  "ikco": "ایران خودرو",
+  "great-wall": "گریت وال",
+  "rayen": "راین",
+  "aventra": "اونترا",
+  "runna": "رانا",
+  "mercedes-benz": "بنز",
+  "tigard": "تیگارد",
+  "sahand": "سهند",
+  "reera": "ری را"
+ }
+}
