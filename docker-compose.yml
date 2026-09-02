@@ -1,0 +1,42 @@
+# Capot — one command to run the stack.
+#
+# Prerequisites: Docker Compose, and a built corpus under backend/data/
+#   (cars.db + price_model.pkl from ingest / pricing --train).
+#
+#   docker compose up --build
+#
+# App:  http://localhost:3080
+# API:  http://localhost:3080/api  (proxied to the backend)
+
+services:
+  backend:
+    build: ./backend
+    # API is reached via the frontend nginx proxy. To expose it directly too:
+    # ports:
+    #   - "8000:8000"
+    volumes:
+      # Persist / reuse the SQLite corpus, model and search artefacts
+      - ./backend/data:/app/data
+    env_file:
+      - path: ./backend/.env
+        required: false
+    environment:
+      LLM_BASE_URL: ${LLM_BASE_URL:-https://api.avalai.ir/v1}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-gpt-4o-mini}
+      LLM_TIMEOUT: ${LLM_TIMEOUT:-30}
+      LLM_LIVE: ${LLM_LIVE:-true}
+      # Allow browser access on the compose frontend port if someone bypasses nginx
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://localhost:3080,http://127.0.0.1:3080}
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: ""
+    ports:
+      - "3080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

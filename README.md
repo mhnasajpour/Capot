@@ -453,6 +453,19 @@ reviewer clones the repo and runs it — no database to provision.
 
 Requires Python 3.12+ and Node 20+.
 
+### Docker
+
+With a built corpus in `backend/data/` (`cars.db`, `price_model.pkl`):
+
+```bash
+docker compose up --build
+```
+
+UI at http://localhost:3080 (nginx proxies `/api` to the backend). LLM settings
+come from `backend/.env` or Compose env vars (`LLM_API_KEY`, `LLM_BASE_URL`, …).
+Uncomment `ports: ["8000:8000"]` under `backend` in `docker-compose.yml` if you
+want the API on the host as well.
+
 ### Backend
 
 ```bash

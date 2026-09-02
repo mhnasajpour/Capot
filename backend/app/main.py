@@ -19,6 +19,7 @@ explainable — instead of pushing it into SQL where the reasoning would vanish.
 from __future__ import annotations
 
 import logging
+import os
 import threading
 from collections import OrderedDict
 from contextlib import asynccontextmanager
@@ -38,6 +39,19 @@ from .llm import cache_stats
 from .query import parse_query
 from .rank import Ranking, order_all
 from .search import SearchIndex
+
+
+def _cors_origins() -> list[str]:
+    """Comma-separated CORS_ORIGINS, or the Vite / Docker Compose defaults."""
+    raw = os.getenv("CORS_ORIGINS", "").strip()
+    if raw:
+        return [o.strip() for o in raw.split(",") if o.strip()]
+    return [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3080",
+        "http://127.0.0.1:3080",
+    ]
 
 log = logging.getLogger(__name__)
 
@@ -200,7 +214,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=_cors_origins(),
     allow_methods=["GET"],
     allow_headers=["*"],
 )
