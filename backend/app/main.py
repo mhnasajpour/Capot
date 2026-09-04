@@ -32,7 +32,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import appraise as appraisal
 from . import db, lexicon, normalize, pricing
-from .config import settings
 from .features import Filters, build_catalogue, count_features, effective_price
 from .health import health_band, score_listing
 from .llm import cache_stats

@@ -50,9 +50,16 @@ import logging
 import re
 from typing import Any, AsyncIterator
 
-from ..normalize import CURRENT_GREGORIAN_YEAR, Listing, body_status_grade, parse_year
+from ..normalize import (
+    CURRENT_GREGORIAN_YEAR,
+    SELLER_DEALER,
+    SELLER_PRIVATE,
+    TRANSMISSION_MAP,
+    Listing,
+    body_status_grade,
+    parse_year,
+)
 from .base import Source, make_code, register
-from .divar import SELLER_DEALER, SELLER_PRIVATE
 
 log = logging.getLogger(__name__)
 
@@ -62,10 +69,6 @@ LIST_PAGE = f"{SITE}/buy-used-cars"
 DETAIL_PATH = f"{SITE}/used-cars"
 
 BUILD_ID_RE = re.compile(r'"buildId":"([^"]+)"')
-
-TRANSMISSION_MAP = {
-    "دنده‌ای": "دنده ای", "دنده ای": "دنده ای", "اتوماتیک": "اتوماتیک",
-}
 
 
 def data_url(build_id: str, page: int) -> str:

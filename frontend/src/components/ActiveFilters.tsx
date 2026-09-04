@@ -2,6 +2,7 @@ import type { FeatureCatalogue } from "../api";
 import { formatMileage, formatPrice, localizeDigits } from "../format";
 import {
   BOOL_KEYS,
+  FIELD_TO_FEATURE,
   LIST_KEYS,
   NUMBER_KEYS,
   clearAll,
@@ -115,13 +116,6 @@ export function ActiveFilters({
     </div>
   );
 }
-
-/** Filter field -> the catalogue feature that carries its labels. */
-const FIELD_TO_FEATURE: Record<ListKey, string> = {
-  brands: "brand", models: "model", body_types: "body_type",
-  transmissions: "transmission", fuels: "fuel", colors: "color",
-  cities: "city", sellers: "seller", sources: "source",
-};
 
 function numberLabel(field: NumberKey, value: number, lang: Lang): string {
   const s = t(lang);

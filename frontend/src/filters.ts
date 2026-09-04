@@ -56,23 +56,55 @@ export const EMPTY_FILTERS: Filters = {
   below_market: false, inspected: false, has_image: false,
 };
 
-/** Which feature key in the catalogue owns which filter fields. */
-export const FEATURE_FIELDS: Record<string, (ListKey | NumberKey | BoolKey | "paint")[]> = {
-  brand: ["brands"],
-  model: ["models"],
-  body_type: ["body_types"],
-  transmission: ["transmissions"],
-  fuel: ["fuels"],
-  color: ["colors"],
-  city: ["cities"],
-  seller: ["sellers"],
-  source: ["sources"],
+/**
+ * Catalogue feature key -> the multi-select field it writes to.
+ *
+ * The one place this correspondence is written down. It used to be three: this
+ * table, `ENUM_FIELDS` in FilterPanel and `FIELD_TO_FEATURE` in ActiveFilters —
+ * the last of which was this one inverted by hand, so adding a feature meant
+ * remembering to edit a mapping in a component that does not obviously own it.
+ */
+export const ENUM_FIELDS: Record<string, ListKey> = {
+  brand: "brands",
+  model: "models",
+  body_type: "body_types",
+  transmission: "transmissions",
+  fuel: "fuels",
+  color: "colors",
+  city: "cities",
+  seller: "sellers",
+  source: "sources",
+};
+
+/** The inverse, derived rather than retyped. */
+export const FIELD_TO_FEATURE = Object.fromEntries(
+  Object.entries(ENUM_FIELDS).map(([feature, field]) => [field, feature]),
+) as Record<ListKey, string>;
+
+/**
+ * Range features -> their [floor, ceiling] fields. `null` where the bound is
+ * not offered: fuel consumption is only ever a ceiling, health only a floor.
+ */
+export const RANGE_FIELDS: Record<string, [NumberKey | null, NumberKey | null]> = {
   price: ["price_min", "price_max"],
   year: ["year_min", "year_max"],
   mileage: ["mileage_min", "mileage_max"],
   engine: ["engine_min", "engine_max"],
-  consumption: ["consumption_max"],
-  health: ["min_health"],
+  consumption: [null, "consumption_max"],
+  health: ["min_health", null],
+};
+
+/** Which feature key in the catalogue owns which filter fields. */
+export const FEATURE_FIELDS: Record<string, (ListKey | NumberKey | BoolKey | "paint")[]> = {
+  ...Object.fromEntries(
+    Object.entries(ENUM_FIELDS).map(([feature, field]) => [feature, [field]]),
+  ),
+  ...Object.fromEntries(
+    Object.entries(RANGE_FIELDS).map(([feature, bounds]) => [
+      feature,
+      bounds.filter((b): b is NumberKey => b !== null),
+    ]),
+  ),
   paint: ["paint"],
   below_market: ["below_market"],
   inspected: ["inspected"],

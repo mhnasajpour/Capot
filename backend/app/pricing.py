@@ -23,7 +23,6 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-from pathlib import Path
 from typing import Any
 
 import joblib
@@ -37,16 +36,10 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
 from . import db
+from .config import METRICS_PATH, MODEL_PATH
 
 log = logging.getLogger(__name__)
 
-MODEL_PATH = Path(__file__).resolve().parents[1] / "data" / "price_model.pkl"
-#: Held-out error, written beside the model whenever it is retrained. Until this
-#: existed the metrics were logged and then lost, so nothing downstream could
-#: quote what the model actually measures — which is exactly what an estimate
-#: needs in order to publish an honest range around itself. See
-#: `appraise.price_band`.
-METRICS_PATH = MODEL_PATH.with_name("price_model_metrics.json")
 
 # Guard rails against junk rows: a car advertised below 50M toman is a parts
 # listing or a typo, and above 100B is a supercar outlier that would distort
@@ -68,6 +61,18 @@ CATEGORICAL_FEATURES = [
 ]
 FEATURES = NUMERIC_FEATURES + CATEGORICAL_FEATURES
 
+# Columns this module reads but does not model on: the listing's identity, the
+# label, the cohort keys, and the free text `is_presale_listing` scans for the
+# markers that say a listing sells an allocation rather than a car.
+#
+# `build_frame` guarantees them alongside FEATURES so every consumer can read
+# them plainly. It used to guarantee only FEATURES, and the consumers coped
+# unevenly: `estimate` reached for `title` and `description` through `getattr`
+# defaults while `_cohort_counts` grouped by `trim_en` and raised KeyError if it
+# was absent — three different answers to "what if the caller did not supply
+# this column", in one module.
+EXTRA_COLUMNS = ["code", "title", "description", "trim_en", "year", "price_toman"]
+
 # Cohort depth at which we trust a trim-level comparable set on its own.
 MIN_COHORT = 5
 
@@ -76,7 +81,7 @@ def build_frame(rows: list[dict]) -> pd.DataFrame:
     df = pd.DataFrame(rows)
     if df.empty:
         return df
-    for col in FEATURES:
+    for col in FEATURES + EXTRA_COLUMNS:
         if col not in df.columns:
             df[col] = np.nan
     # HistGradientBoosting handles NaN natively; categoricals just need to be
@@ -148,8 +153,20 @@ def price_flag(row: dict, implausible: bool) -> str:
 
 
 def trainable_mask(df: pd.DataFrame) -> pd.Series:
-    """Rows usable as supervision: a real published price in a sane range."""
-    presale = df["title"].fillna("").apply(lambda t: is_presale_listing(t))
+    """Rows usable as supervision: a real published price in a sane range.
+
+    Reads the description as well as the title, because `price_flag` does. The
+    two used to disagree — this mask matched the title alone — so 495 listings
+    were trained on as if their figure were a market price while the very same
+    module labelled that figure a deposit and refused to compute a delta from
+    it. Whatever the marker set gets right or wrong, one predicate has to answer
+    both questions: a price the app will not compare against the market is not a
+    price the model should learn from.
+    """
+    presale = pd.Series(
+        [is_presale_listing(t, d) for t, d in zip(df["title"], df["description"])],
+        index=df.index,
+    )
     return (
         df["price_toman"].notna()
         & (df["price_toman"] >= MIN_VALID_PRICE)
@@ -336,10 +353,8 @@ def estimate(pipe: Pipeline, rows: list[dict]) -> list[dict]:
         else:
             level, n = "global", max(trim_n, model_n)
 
-        flag = price_flag(
-            {"title": getattr(row, "title", None), "description": getattr(row, "description", None)},
-            bool(implausible[idx]),
-        )
+        flag = price_flag({"title": row.title, "description": row.description},
+                          bool(implausible[idx]))
 
         # A deposit or voucher figure is not this car's price, so it gets no
         # delta — comparing it to the market would invent a 90% discount.

@@ -25,15 +25,12 @@ import logging
 import re
 from dataclasses import dataclass, field
 from difflib import get_close_matches
-from pathlib import Path
 from typing import Any, Iterable
 
-from .config import DATA_DIR
+from .config import LEXICON_PATH
 from .normalize import fa_to_en_digits
 
 log = logging.getLogger(__name__)
-
-LEXICON_PATH = DATA_DIR / "lexicon.json"
 
 # Orthographic folding. Applied to both the vocabulary and the query so the two
 # always meet in the same normal form.
@@ -224,7 +221,16 @@ def build(rows: Iterable[dict]) -> Lexicon:
 
 
 def load(rows: Iterable[dict] | None = None, *, rebuild: bool = False) -> Lexicon:
-    """Load the cached lexicon, building it from `rows` when missing or stale."""
+    """Load the cached lexicon, building it from `rows` when missing or stale.
+
+    Read-only: a stale cache is rebuilt in memory and *not* written back.
+    Persisting belongs to whoever owns the corpus — `main.load_corpus` builds
+    the lexicon from the real corpus and calls `save` itself. Writing from here
+    meant that anything constructing a `SearchIndex` over a handful of rows
+    replaced the shipped 22,820-row vocabulary with its own: running the test
+    suite shrank `data/lexicon.json` from 56KB to 2KB, and the next server start
+    then answered "no such car" for every brand the fixtures did not mention.
+    """
     if not rebuild and LEXICON_PATH.exists():
         try:
             data = json.loads(LEXICON_PATH.read_text(encoding="utf-8"))
@@ -241,9 +247,7 @@ def load(rows: Iterable[dict] | None = None, *, rebuild: bool = False) -> Lexico
     if rows is None:
         return Lexicon()
 
-    lex = build(rows)
-    save(lex)
-    return lex
+    return build(rows)
 
 
 def save(lex: Lexicon) -> None:

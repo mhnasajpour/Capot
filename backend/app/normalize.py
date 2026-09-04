@@ -63,6 +63,26 @@ DEFAULT_BODY_GRADE = 60  # unknown phrasing: assume middling rather than punish
 SELLER_PRIVATE = "شخصی"
 SELLER_SHOWROOM = "نمایشگاه"
 SELLER_AGENCY = "نمایندگی"
+#: Divar, Sheypoor and Karnameh have no agency tier — a listing is a person's or
+#: a shop's — so they all reach for the showroom wording. The alias is here so
+#: they can say what they mean without each redeclaring the string, which is how
+#: `crawl/divar.py` came to own a second copy of `SELLER_PRIVATE` that
+#: `karnameh.py` and `sheypoor.py` then imported *from an adapter*.
+SELLER_DEALER = SELLER_SHOWROOM
+
+# Gearbox and fuel as the classifieds write them, mapped onto Bama's wording —
+# the vocabulary `normalize_ad`, the UI and `features.VALUE_LABELS_EN` already
+# speak. Shared here because three adapters need the same tables: Divar and
+# Karnameh had byte-identical copies of TRANSMISSION_MAP, and Sheypoor imported
+# both of Divar's.
+TRANSMISSION_MAP = {
+    "دنده‌ای": "دنده ای", "دنده ای": "دنده ای", "اتوماتیک": "اتوماتیک",
+}
+FUEL_MAP = {
+    "بنزین": "بنزینی", "بنزینی": "بنزینی", "دوگانه سوز": "دوگانه سوز",
+    "دوگانه‌سوز": "دوگانه سوز", "گازوئیل": "دیزلی", "دیزل": "دیزلی",
+    "هیبرید": "هیبریدی", "برقی": "برقی",
+}
 
 
 def make_code(source: str, native_code: str) -> str:

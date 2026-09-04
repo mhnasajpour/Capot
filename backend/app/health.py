@@ -116,9 +116,14 @@ def _age_factor(age: int | None) -> Factor | None:
     return None
 
 
-def _seller_factor(seller: str | None, dealer_score: float | None, ad_count: int | None) -> Factor | None:
-    """Seller trust. A well-rated dealership is a real signal; a brand-new
-    account with hundreds of ads is a weaker one."""
+def _seller_factor(seller: str | None, dealer_score: float | None) -> Factor | None:
+    """Seller trust, from the marque's own accountability and its rating.
+
+    `dealer_ad_count` is deliberately not read. It was passed in and ignored,
+    which made the signature promise a volume judgement the arithmetic never
+    made — and a high ad count is not evidence either way here: the busiest
+    dealers on these sites are also the established ones.
+    """
     if seller == "نمایندگی":
         return Factor("seller", "فروشنده: نمایندگی رسمی", "Seller: official agency", 8)
     if dealer_score is not None:
@@ -224,7 +229,7 @@ def score_listing(row: dict) -> HealthResult:
     candidates = [
         _mileage_factor(row.get("mileage_km"), row.get("age")),
         _age_factor(row.get("age")),
-        _seller_factor(row.get("seller"), row.get("dealer_score"), row.get("dealer_ad_count")),
+        _seller_factor(row.get("seller"), row.get("dealer_score")),
         _inspection_factor(bool(row.get("authenticated"))),
         _insurance_factor(row.get("insurance_months")),
         _chassis_factor(row.get("chassis_status")),

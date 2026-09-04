@@ -20,6 +20,7 @@ from pathlib import Path
 
 from . import db
 from .canonical import BrandResolver, apply_duplicates
+from .config import BAMA_DETAIL_PATH, raw_path
 from .crawl import bama as _bama  # noqa: F401 - registers BamaSource
 from .crawl import divar as _divar  # noqa: F401 - registers DivarSource
 from .crawl import karnameh as _karnameh  # noqa: F401 - registers KarnamehSource
@@ -28,13 +29,6 @@ from .crawl.base import available, get_source
 from .normalize import Listing, merge_detail
 
 log = logging.getLogger(__name__)
-
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-DETAIL_PATH = DATA_DIR / "bama_details.jsonl"
-
-
-def raw_path(source: str) -> Path:
-    return DATA_DIR / f"{source}_raw.jsonl"
 
 
 def is_brand_new(listing: Listing) -> bool:
@@ -72,7 +66,7 @@ def load_source(source: str) -> tuple[list[Listing], int]:
     return list(listings.values()), failures
 
 
-def apply_details(listings: list[Listing], path: Path = DETAIL_PATH) -> int:
+def apply_details(listings: list[Listing], path: Path = BAMA_DETAIL_PATH) -> int:
     """Fold Bama detail records into the matching listings."""
     if not path.exists():
         return 0

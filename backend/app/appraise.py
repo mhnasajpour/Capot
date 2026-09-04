@@ -500,7 +500,9 @@ def appraise(
     genuinely different and a buyer or seller deserves to be told which one they
     hit. This mirrors `search.retrieve`'s `mode`, for the same reason.
     """
-    row = car.to_row()
+    # The row is built after `impute`, not here: an unimputed one would be
+    # scanned and graded only to be thrown away, and the two early returns below
+    # never look at it at all.
     result: dict[str, Any] = {
         "status": "ok",
         "input": car.to_dict(),

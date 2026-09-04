@@ -2,12 +2,13 @@ import { useMemo, useState } from "react";
 import type { FeatureCatalogue, FeatureCounts, FeatureSpec, FeatureValue } from "../api";
 import { formatMileage, formatPrice, localizeDigits } from "../format";
 import {
+  ENUM_FIELDS,
+  RANGE_FIELDS,
   clearAll,
   clearFeature,
   isFeatureActive,
   toggleValue,
   type Filters,
-  type ListKey,
   type NumberKey,
 } from "../filters";
 import { t, type Lang } from "../i18n";
@@ -24,22 +25,6 @@ import { t, type Lang } from "../i18n";
  * makes multi-select work: with «هیوندای» ticked the panel still shows how many
  * Kias are available to add, instead of reporting every other brand as zero.
  */
-
-/** Which feature fields each catalogue key writes to, for the range inputs. */
-const RANGE_FIELDS: Record<string, [NumberKey | null, NumberKey | null]> = {
-  price: ["price_min", "price_max"],
-  year: ["year_min", "year_max"],
-  mileage: ["mileage_min", "mileage_max"],
-  engine: ["engine_min", "engine_max"],
-  consumption: [null, "consumption_max"],
-  health: ["min_health", null],
-};
-
-const ENUM_FIELDS: Record<string, ListKey> = {
-  brand: "brands", model: "models", body_type: "body_types",
-  transmission: "transmissions", fuel: "fuels", color: "colors",
-  city: "cities", seller: "sellers", source: "sources",
-};
 
 /** Sections open on first paint. The rest stay collapsed so the panel is scannable. */
 const OPEN_BY_DEFAULT = new Set(["brand", "price", "body_type"]);
@@ -195,7 +180,9 @@ function EnumFilter({
 }) {
   const s = t(lang);
   const field = ENUM_FIELDS[feature.key];
-  const selected = filters[field] ?? [];
+  // Read straight out of state: `filters[field] ?? []` minted a fresh array on
+  // every render, which made the memo below rebuild every render too.
+  const selected = filters[field];
   const [needle, setNeedle] = useState("");
   const [expanded, setExpanded] = useState(false);
 
@@ -559,14 +546,15 @@ function SliderFilter({
 }
 
 function formatRangeValue(feature: FeatureSpec, value: number, lang: Lang): string {
-  const s = t(lang);
   const prefix = feature.bound === "max" ? (lang === "fa" ? "تا " : "up to ") : (lang === "fa" ? "از " : "from ");
   if (feature.key === "price") return prefix + formatPrice(value, lang);
   if (feature.key === "mileage") return prefix + formatMileage(value, lang);
   const decimals = feature.decimals ?? 0;
   const text = localizeDigits(value.toFixed(decimals), lang);
   const unit = feature.unit ? ` ${unitHint(feature, lang)}` : "";
-  return `${prefix}${text}${unit}` || s.anyValue;
+  // `prefix` is always non-empty, so there is no empty-string case to fall back
+  // from — this used to end `|| s.anyValue`, which could never be reached.
+  return `${prefix}${text}${unit}`;
 }
 
 /**

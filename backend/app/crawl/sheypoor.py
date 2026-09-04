@@ -39,6 +39,10 @@ from urllib.parse import urlencode
 
 from ..normalize import (
     CURRENT_GREGORIAN_YEAR,
+    FUEL_MAP,
+    SELLER_DEALER,
+    SELLER_PRIVATE,
+    TRANSMISSION_MAP,
     Listing,
     body_status_grade,
     parse_mileage,
@@ -46,7 +50,6 @@ from ..normalize import (
     parse_year,
 )
 from .base import Source, make_code, register
-from .divar import FUEL_MAP, TRANSMISSION_MAP, SELLER_DEALER, SELLER_PRIVATE
 
 log = logging.getLogger(__name__)
 
@@ -122,7 +125,9 @@ def listing_rows(payload: dict) -> list[dict]:
                 item for item in entry.get("items") or []
                 if item.get("id") and item.get("attributes")
             )
-        elif kind in ("normal", "vip") and entry.get("id") and entry.get("attributes"):
+        # Not `kind in ("normal", "vip")`: the first branch has already taken
+        # every vip entry, so that arm could never fire on one.
+        elif kind == "normal" and entry.get("id") and entry.get("attributes"):
             rows.append(entry)
     return rows
 

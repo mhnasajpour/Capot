@@ -22,6 +22,7 @@ import json
 import logging
 from pathlib import Path
 
+from ..config import BAMA_DETAIL_PATH, DATA_DIR, raw_path
 from . import bama as _bama  # noqa: F401 - registers BamaSource
 from . import divar as _divar  # noqa: F401 - registers DivarSource
 from . import karnameh as _karnameh  # noqa: F401 - registers KarnamehSource
@@ -29,9 +30,6 @@ from . import sheypoor as _sheypoor  # noqa: F401 - registers SheypoorSource
 from .base import available, get_source
 
 log = logging.getLogger(__name__)
-
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
-DETAIL_PATH = DATA_DIR / "bama_details.jsonl"
 
 # Stratifying across brands gives deeper per-model cohorts than the
 # undifferentiated feed, which skews to whatever was posted most recently.
@@ -67,7 +65,7 @@ async def crawl_source(name: str, pages: int, append: bool = False, **options) -
     is likely, and starting from scratch each time is wasteful.
     """
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    path = DATA_DIR / f"{name}_raw.jsonl"
+    path = raw_path(name)
 
     known = existing_ids(path) if append else set()
     if known:
@@ -97,12 +95,12 @@ async def crawl_bama_details(limit: int) -> int:
         return 0
     from .bama import BamaClient
 
-    raw_path = DATA_DIR / "bama_raw.jsonl"
-    if not raw_path.exists():
+    bama_raw = raw_path("bama")
+    if not bama_raw.exists():
         return 0
 
     codes: list[str] = []
-    with raw_path.open(encoding="utf-8") as fh:
+    with bama_raw.open(encoding="utf-8") as fh:
         for line in fh:
             try:
                 record = json.loads(line)
@@ -118,7 +116,7 @@ async def crawl_bama_details(limit: int) -> int:
     async with BamaClient() as client:
         found = await client.details(codes)
 
-    with DETAIL_PATH.open("w", encoding="utf-8") as fh:
+    with BAMA_DETAIL_PATH.open("w", encoding="utf-8") as fh:
         for code, data in found.items():
             fh.write(json.dumps({"code": code, "data": data}, ensure_ascii=False) + "\n")
     log.info("[bama] wrote %d detail records", len(found))

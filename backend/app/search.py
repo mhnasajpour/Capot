@@ -47,7 +47,6 @@ import threading
 import time
 from collections import Counter
 from dataclasses import dataclass, field
-from pathlib import Path
 from typing import Any
 
 import numpy as np
@@ -57,12 +56,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize as l2_normalize
 
 from . import lexicon
-from .config import DATA_DIR
+from .config import EMBEDDINGS_PATH, LSA_PATH
 from .lexicon import Lexicon
 
 log = logging.getLogger(__name__)
 
-EMBEDDINGS_PATH = DATA_DIR / "embeddings.npy"
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 # The LSA fallback, cached to disk. Fitting it over the whole corpus takes the
@@ -70,7 +68,6 @@ EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 # query that needed it — so the first vague search of every server run waited
 # through the fit before it saw a single car. It is now built once, up front and
 # off the request path, and cached so the next start pays nothing.
-LSA_PATH = DATA_DIR / "lsa.npz"
 LSA_COMPONENTS = 160
 
 # Fusion weights when no entity was matched.
@@ -158,6 +155,8 @@ class SearchIndex:
         self.corpus = corpus
         self.codes = [r["code"] for r in corpus]
         self.by_code = {r["code"]: r for r in corpus}
+        #: code -> its row index, so a score array can be read by code.
+        self._position = {code: i for i, code in enumerate(self.codes)}
         self.lexicon = lex or lexicon.load(corpus)
 
         self._docs = [doc_text(r) for r in corpus]
@@ -543,9 +542,12 @@ class SearchIndex:
         grounded = words and all(self._is_attribute(w) for w in words)
         base = 0.5 if grounded else 0.8
 
+        # Indexed by position, not by building a dict over the whole corpus:
+        # `codes` is the entity match, typically a few hundred rows out of
+        # twenty thousand, and only those are ever read back.
         scores = self._text_scores(leftover)
-        by_code = {self.codes[i]: float(scores[i]) for i in range(len(self.codes))}
-        wanted = {c: by_code.get(c, 0.0) for c in codes}
+        position = self._position
+        wanted = {c: float(scores[position[c]]) for c in codes if c in position}
         top = max(wanted.values(), default=0.0)
         if top <= 0:
             return {c: 1.0 for c in codes}

@@ -38,7 +38,11 @@ from typing import Any, AsyncIterator
 
 from ..normalize import (
     CURRENT_GREGORIAN_YEAR,
+    FUEL_MAP,
     JALALI_OFFSET,
+    SELLER_DEALER,
+    SELLER_PRIVATE,
+    TRANSMISSION_MAP,
     Listing,
     body_status_grade,
     fa_to_en_digits,
@@ -76,16 +80,6 @@ DEFAULT_CITIES = [
     "13",  # کرمان
 ]
 
-# Divar's own vocabulary, mapped onto the shapes the rest of the app expects
-# (Bama's wording, since that is what normalize.py and the UI already speak).
-TRANSMISSION_MAP = {
-    "دنده‌ای": "دنده ای", "دنده ای": "دنده ای", "اتوماتیک": "اتوماتیک",
-}
-FUEL_MAP = {
-    "بنزین": "بنزینی", "بنزینی": "بنزینی", "دوگانه سوز": "دوگانه سوز",
-    "دوگانه‌سوز": "دوگانه سوز", "گازوئیل": "دیزلی", "دیزل": "دیزلی",
-    "هیبرید": "هیبریدی", "برقی": "برقی",
-}
 # Divar grades body condition with different phrases from Bama, so they need an
 # explicit mapping onto the same 0-100 paint-integrity scale.
 BODY_STATUS_MAP = {
@@ -102,8 +96,10 @@ BODY_STATUS_MAP = {
     "اوراقی": 5,
 }
 
-SELLER_PRIVATE = "شخصی"
-SELLER_DEALER = "نمایشگاه"
+# `SELLER_PRIVATE`, `SELLER_DEALER`, `TRANSMISSION_MAP` and `FUEL_MAP` are
+# imported above rather than declared here: they are the shared cross-source
+# vocabulary `normalize.py` owns, and Karnameh and Sheypoor need the same ones.
+# Re-exported from this module so `from .divar import FUEL_MAP` still resolves.
 
 # Divar frequently omits وضعیت بدنه entirely — none of the sampled listings
 # carried it — so `infer_body_status` reads it out of the title and description
@@ -114,7 +110,11 @@ SELLER_DEALER = "نمایشگاه"
 
 
 def _widgets(payload: dict) -> list[dict]:
-    """Flatten every widget in a detail payload, whatever section it sits in."""
+    """Flatten every widget in a detail payload, whatever section it sits in.
+
+    The three extractors below each accept the result, so a caller with a whole
+    payload in hand can walk it once and pass it to all of them.
+    """
     found: list[dict] = []
 
     def walk(node: Any) -> None:
@@ -131,10 +131,10 @@ def _widgets(payload: dict) -> list[dict]:
     return found
 
 
-def extract_fields(detail: dict) -> dict[str, str]:
+def extract_fields(detail: dict, widgets: list[dict] | None = None) -> dict[str, str]:
     """Collect every label/value pair the detail page exposes."""
     fields: dict[str, str] = {}
-    for widget in _widgets(detail):
+    for widget in _widgets(detail) if widgets is None else widgets:
         data = widget.get("data") or {}
         kind = widget.get("widget_type")
 
@@ -154,19 +154,19 @@ def extract_fields(detail: dict) -> dict[str, str]:
     return fields
 
 
-def extract_breadcrumb(detail: dict) -> list[str]:
+def extract_breadcrumb(detail: dict, widgets: list[dict] | None = None) -> list[str]:
     """`['وسایل نقلیه','خودرو','خودرو سواری و وانت','پژو','206','تیپ ۵']`."""
-    for widget in _widgets(detail):
+    for widget in _widgets(detail) if widgets is None else widgets:
         items = (widget.get("data") or {}).get("parent_items")
         if items:
             return [str(i.get("title", "")).strip() for i in items if i.get("title")]
     return []
 
 
-def extract_description(detail: dict) -> str | None:
+def extract_description(detail: dict, widgets: list[dict] | None = None) -> str | None:
     """The longest free-text blob on the page is the seller's description."""
     best = ""
-    for widget in _widgets(detail):
+    for widget in _widgets(detail) if widgets is None else widgets:
         if widget.get("widget_type") not in ("DESCRIPTION_ROW", "EXPANDABLE_ROW", "TITLE_ROW"):
             continue
         text = (widget.get("data") or {}).get("text") or ""
@@ -325,8 +325,12 @@ class DivarSource(Source):
         if not token or not detail:
             return None
 
-        fields = extract_fields(detail)
-        crumbs = extract_breadcrumb(detail)
+        # `_widgets` recurses over the whole detail payload, and all three
+        # extractors want the same flattened list — so it is walked once here
+        # and shared, rather than three times per listing.
+        widgets = _widgets(detail)
+        fields = extract_fields(detail, widgets)
+        crumbs = extract_breadcrumb(detail, widgets)
 
         brand_fa = crumbs[3] if len(crumbs) > 3 else None
         model_fa = crumbs[4] if len(crumbs) > 4 else None
@@ -355,7 +359,7 @@ class DivarSource(Source):
         web_info = ((listing_row.get("action") or {}).get("payload") or {}).get("web_info") or {}
         city = web_info.get("city_persian")
 
-        description = extract_description(detail)
+        description = extract_description(detail, widgets)
         grade = BODY_STATUS_MAP.get((body_status or "").strip())
         if body_status and grade is None:
             grade = body_status_grade(body_status)

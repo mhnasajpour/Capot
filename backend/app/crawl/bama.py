@@ -22,15 +22,11 @@ from typing import Any, AsyncIterator
 import httpx
 
 from ..normalize import Listing, normalize_ad
-from .base import Source, register
+from .base import USER_AGENT, Source, register
 
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://bama.ir/cad/api"
-USER_AGENT = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-)
 
 # Be a polite guest: this is a public endpoint and we only need a few thousand
 # rows, once. Keep concurrency at 1 for search and a small pool for details.

@@ -48,13 +48,6 @@ export function hasInput(input: AppraisalInput): boolean {
   return Boolean(input.q.trim()) || INPUT_KEYS.some((key) => input[key].trim());
 }
 
-/** The minimum an appraisal needs before it can return a number at all. */
-export function isPriceable(input: AppraisalInput): boolean {
-  // Prose can supply all three, so anything typed counts as possibly enough —
-  // the backend is the one that decides, and says why when it is not.
-  return Boolean(input.q.trim()) || Boolean(input.brand && input.model && input.year);
-}
-
 /**
  * Serialise for both the address bar and the API — deliberately one function, so
  * the URL someone shares is exactly the request that produced what they saw.

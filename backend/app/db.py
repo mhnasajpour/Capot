@@ -18,13 +18,11 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Iterable
 
+from .config import DB_PATH
 from .lexicon import BRAND_ALIASES, fold
 from .normalize import Listing
 
 log = logging.getLogger(__name__)
-
-DATA_DIR = Path(__file__).resolve().parents[1] / "data"
-DB_PATH = DATA_DIR / "cars.db"
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS listings (
