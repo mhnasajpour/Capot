@@ -331,8 +331,8 @@ class TestHealth:
 
         assert risky_result["health"]["score"] < clean_result["health"]["score"]
         assert any(
-            flag["code"] == "engine_replaced"
-            for flag in risky_result["flags"]["red_flags"]
+            factor["key"] == "text_risk:engine_replaced"
+            for factor in risky_result["health"]["factors"]
         )
 
     def test_paint_condition_moves_the_score(self, scored):

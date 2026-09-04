@@ -252,10 +252,6 @@ export interface Appraisal {
   warnings: string[];
   price: AppraisalPrice | null;
   health: HealthBlock | null;
-  flags: {
-    red_flags: { code: string; label_fa: string; label_en: string; severity: string }[];
-    positives: string[];
-  };
   /** Live ads for cars like theirs — the same payload the result grid renders. */
   matches: CarResult[];
   /** How closely "like theirs" had to be read: model_year | model | brand | none. */

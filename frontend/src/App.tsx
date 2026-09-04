@@ -214,20 +214,32 @@ export default function App() {
   // box has left the screen — two identical search bars stacked on top of each
   // other on first paint would be a design error, and the sticky one exists
   // purely so the call to action survives scrolling.
-  const heroSearch = useRef<HTMLDivElement>(null);
-  const [heroSearchVisible, setHeroSearchVisible] = useState(true);
+  //
+  // The box is held in state rather than a ref because the hero is not
+  // permanent: it unmounts for the appraisal view and comes back as a *new*
+  // element. Observing whatever the ref happened to hold at this component's
+  // own mount left the observer watching the detached node the first hero
+  // dropped, answering "gone" for the rest of the session — which is how the
+  // header's copy ended up on screen beside the hero's own box, which is the
+  // one arrangement the whole mechanism exists to prevent.
+  const [heroSearch, setHeroSearch] = useState<HTMLDivElement | null>(null);
+  // Which box has gone under the header, rather than a bare yes/no: an answer
+  // about a hero that has since been replaced then cannot be read as an answer
+  // about the one on screen now, and the header stays quiet until the box it
+  // stands in for is positively known to be gone.
+  const [scrolledPast, setScrolledPast] = useState<Element | null>(null);
+  const heroSearchGone = heroSearch !== null && scrolledPast === heroSearch;
   useEffect(() => {
-    const element = heroSearch.current;
-    if (!element || typeof IntersectionObserver === "undefined") return;
+    if (!heroSearch || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(
-      ([entry]) => setHeroSearchVisible(entry.isIntersecting),
+      ([entry]) => setScrolledPast(entry.isIntersecting ? null : entry.target),
       // The sticky bar covers the top of the viewport, so the hero box counts as
       // gone once it slides under it rather than once it leaves the window.
       { rootMargin: "-64px 0px 0px 0px" },
     );
-    observer.observe(element);
+    observer.observe(heroSearch);
     return () => observer.disconnect();
-  }, []);
+  }, [heroSearch]);
 
   // The banner folds down to a strapline and a box once a search has run — but
   // not while the reader is still looking at it. Reloading a shared result URL
@@ -235,19 +247,22 @@ export default function App() {
   // one frame and then swallowed it, which reads as a glitch rather than as a
   // page getting out of the way. So the fold waits for the band to leave the
   // screen, and latches: it never grows back under someone who scrolls up.
-  const heroBand = useRef<HTMLElement>(null);
+  const [heroBand, setHeroBand] = useState<HTMLElement | null>(null);
   const [heroPassed, setHeroPassed] = useState(false);
   useEffect(() => {
-    const element = heroBand.current;
-    if (!element || typeof IntersectionObserver === "undefined") return;
+    if (!heroBand || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) return;
+      // A notification can outlive the element it describes — leaving for the
+      // appraisal view takes the band off the page — and "removed" is not
+      // "scrolled past". Latching on that would fold the banner under a reader
+      // who never reached the bottom of it.
+      if (entry.isIntersecting || !entry.target.isConnected) return;
       setHeroPassed(true);
       observer.disconnect();
     });
-    observer.observe(element);
+    observer.observe(heroBand);
     return () => observer.disconnect();
-  }, []);
+  }, [heroBand]);
 
   // Anything that changes *which* cars match starts a new list. Keeping the
   // cars already scrolled past would answer a question nobody asked.
@@ -293,14 +308,18 @@ export default function App() {
   const compact = hasSearched && heroPassed;
   const bandHeight = useRef(0);
   useLayoutEffect(() => {
-    const element = heroBand.current;
-    if (!element) return;
+    if (!heroBand) {
+      // There is no band on screen to hold still, and the height of the one
+      // that just left is not a baseline for the one that comes back.
+      bandHeight.current = 0;
+      return;
+    }
     const previous = bandHeight.current;
-    bandHeight.current = element.offsetHeight;
+    bandHeight.current = heroBand.offsetHeight;
     if (previous > 0 && previous !== bandHeight.current && window.scrollY > 0) {
       window.scrollBy(0, bandHeight.current - previous);
     }
-  }, [compact, stats]);
+  }, [compact, stats, heroBand]);
 
   return (
     <div className="min-h-screen" dir={dir} id="top">
@@ -313,7 +332,7 @@ export default function App() {
         theme={theme}
         query={query}
         loading={loading}
-        showSearch={!heroSearchVisible && !onAppraiseView}
+        showSearch={heroSearchGone && !onAppraiseView}
         onAppraise={onAppraiseView}
         onSearch={changeQuery}
         onToggleAppraise={() => {
@@ -338,8 +357,8 @@ export default function App() {
           query={query}
           loading={loading}
           compact={compact}
-          bandRef={heroBand}
-          searchRef={heroSearch}
+          bandRef={setHeroBand}
+          searchRef={setHeroSearch}
           onSearch={changeQuery}
           onAppraise={() => {
             setOnAppraiseView(true);

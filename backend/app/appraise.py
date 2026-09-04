@@ -508,7 +508,6 @@ def appraise(
         "warnings": [],
         "price": None,
         "health": None,
-        "flags": {"red_flags": row["red_flags"], "positives": row["positives"]},
         "matches": [],
         "match_level": "none",
     }

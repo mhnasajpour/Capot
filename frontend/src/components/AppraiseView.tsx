@@ -173,10 +173,7 @@ export function AppraiseView({
           <Verdict result={result} lang={lang} />
           {result.status === "ok" && (
             <>
-              <div className="grid gap-5 lg:grid-cols-2">
-                <HealthSection result={result} lang={lang} />
-                <FlagsSection result={result} lang={lang} />
-              </div>
+              <HealthSection result={result} lang={lang} />
               <MatchesSection result={result} lang={lang} onOpenCar={onOpenCar} />
             </>
           )}
@@ -292,34 +289,6 @@ function HealthSection({ result, lang }: { result: Appraisal; lang: Lang }) {
         </span>
       </div>
       <HealthFactors health={result.health} lang={lang} />
-    </section>
-  );
-}
-
-/** What the risk scanner found in their own words — the reason to write prose. */
-function FlagsSection({ result, lang }: { result: Appraisal; lang: Lang }) {
-  const s = t(lang);
-  const { red_flags: redFlags, positives } = result.flags;
-
-  return (
-    <section className="card p-5">
-      <h2 className="mb-3 font-semibold text-ink-900">{s.appraiseFlags}</h2>
-      {redFlags.length === 0 && positives.length === 0 ? (
-        <p className="text-xs text-ink-500">{s.appraiseNoFlags}</p>
-      ) : (
-        <div className="flex flex-wrap gap-1.5">
-          {redFlags.map((flag) => (
-            <span key={flag.code} className="chip border-over/20 bg-over-soft text-over">
-              {lang === "fa" ? flag.label_fa : flag.label_en}
-            </span>
-          ))}
-          {positives.map((positive) => (
-            <span key={positive} className="chip border-deal/20 bg-deal-soft text-deal">
-              {positive}
-            </span>
-          ))}
-        </div>
-      )}
     </section>
   );
 }

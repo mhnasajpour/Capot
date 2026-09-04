@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from "react";
+import type { Ref, ReactNode } from "react";
 import type { Stats } from "../api";
 import { localizeDigits } from "../format";
 import { t, type Lang } from "../i18n";
@@ -51,8 +51,9 @@ export function Hero({
   query: string;
   loading: boolean;
   compact: boolean;
-  bandRef: RefObject<HTMLElement | null>;
-  searchRef: RefObject<HTMLDivElement | null>;
+  /** Callback refs: App rebuilds its observers when the hero remounts. */
+  bandRef: Ref<HTMLElement>;
+  searchRef: Ref<HTMLDivElement>;
   onSearch: (query: string) => void;
   onAppraise: () => void;
   onExplore: () => void;
